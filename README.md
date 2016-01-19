@@ -13,3 +13,4 @@ Find out macamana nak fork and do pull requests
 * MySQL
 * PHP
 * Javascript
+* XAMPP (gunalah proper server kalau boleh)
