@@ -7,3 +7,9 @@ Ini adalah direktori untuk pencarian keje sementara
 Sila guna git!
 Kalau tak guna, piap!
 Find out macamana nak fork and do pull requests
+
+### Tech
+
+* MySQL
+* PHP
+* Javascript
