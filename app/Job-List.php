@@ -21,7 +21,7 @@
                         <th>Job Title</th>
                         <th>Company</th>
                         <th>Salary</th>
-                        <th>Date Created</th>
+                        <th>123</th>
                         </tr>
                 </thead>
                 <tbody>
