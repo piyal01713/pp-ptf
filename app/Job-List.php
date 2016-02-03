@@ -1,4 +1,4 @@
-   <html>
+<html>
 <head>
 	<Title>Job List</Title>
     <link rel="stylesheet" type="text/css" href="job-list.css">
