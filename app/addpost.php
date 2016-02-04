@@ -3,6 +3,10 @@ session_start();
 include 'dbcon.php';
 
 if($conn){
+//declare $_POST['variable'] as variable that can escape inputed values
+$_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
+$_POST['scope']=mysqli_real_escape_string($conn, $_POST['scope']);
+$_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 
 //insert data to table "posts"
 $sql="INSERT INTO posts(
@@ -25,9 +29,9 @@ VALUES('$_POST[work]',
 	'$_POST[loccat]',
 	'$_POST[date_posted]')";
 
-
 if(mysqli_query($conn, $sql)){
 	echo "Your post has been saved!<br>";
+	echo "<a href='Job-list.php'>Back to Job List</a>";
 }
 else{
 	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
@@ -35,8 +39,3 @@ else{
 mysqli_close($conn);
 }
 ?>
-<html>
-<body>
-<a href="Job-list.php">Back to Job List</a>
-</body>
-</html>
