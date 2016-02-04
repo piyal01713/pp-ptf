@@ -1,7 +1,6 @@
 <?php
 include 'dbcon.php';
 
-<<<<<<< HEAD
 if(!isset($_POST['submitBtn'])){
 	$sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 		if($result=mysqli_query($conn, $sql)){
@@ -10,9 +9,6 @@ if(!isset($_POST['submitBtn'])){
 			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 		}
 }
-=======
-$result=mysqli_query($conn,$postinfo);
->>>>>>> upstream/master
 
 if(isset($_POST['submitBtn'])){
 	
