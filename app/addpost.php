@@ -29,7 +29,7 @@ VALUES('$_POST[work]',
 	'$_POST[loccat]',
 	'$_POST[date_posted]')";
 
-if(mysqli_query($conn, $sql, $escape)){
+if(mysqli_query($conn, $sql)){
 	echo "Your post has been saved!<br>";
 	echo "<a href='Job-list.php'>Back to Job List</a>";
 }
