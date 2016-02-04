@@ -26,7 +26,12 @@
                         <th>Job Title</th>
                         <th>Company</th>
                         <th>Salary</th>
-                        <th>Date</th>
+                        <!-- <th>Address</th>
+                        <th>Job Scope</th>
+                        <th>Info</th>
+                        <th>Job Category</th>
+                        <th>Location Category</th> -->
+                        <th>Date of Post</th>
                         <th colspan="2">Options</th>
                     </tr>
                 </thead>
@@ -38,13 +43,18 @@
                         echo "<td>".$postinfo['work']."</td>";
                         echo "<td>".$postinfo['employer']."</td>";
                         echo "<td>RM".$postinfo['salary']."</td>";
+                        //echo "<td>".$postinfo['location']."</td>";
+                        //echo "<td>".$postinfo['scope']."</td>";
+                        //echo "<td>".$postinfo['addinfo']."</td>";
+                        //echo "<td>".$postinfo['jobcat']."</td>";
+                        //echo "<td>".$postinfo['loccat']."</td>";
                         echo "<td>".$postinfo['date_posted']."</td>";
+
                         // "\" = escape character
                         echo "<td><a href=\" updatepost.php?id=".$postinfo['id']." \">Edit</a></td>";
                         echo "<td><a href=\" deletepost.php?id=".$postinfo['id']." \">Delete</a></td>";
                         //echo "<td colspan="4">"."<hr>"."</td>";
                         echo "</tr>";
-                        
                     }
                 }else{
                     echo "<tr>";
@@ -58,7 +68,6 @@
                     ?>
                 </tbody>
             </table>
-
     <div>
 </body>
 </html>
