@@ -2,7 +2,7 @@
 include 'dbcon.php';
 $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 
-$result=mysqli_query($conn,$sql,$postinfo);
+$result=mysqli_query($conn,$postinfo);
 
 $postinfo=mysqli_fetch_array($result);
 
