@@ -1,7 +1,7 @@
 <html>
 <head>
 	<Title>Job List</Title>
-    <link rel="stylesheet" type="text/css" href="job-list.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <?php
     include 'dbcon.php';
@@ -15,17 +15,17 @@
             <h1>Job List</h1>
         </header>
 
-        <p class="createbtn">
-            <a href="create-post.php">Create New Post</a>
+        <p class="buttonalign">
+            <a class="createbtn" href="create-post.php">Create New Post</a>
         </p>
 
         <p>
             <table border="1" width="100%">
                 <thead>
                     <tr>
-                        <th>Job Title</th>
-                        <th>Company</th>
-                        <th>Salary</th>
+                        <th colspan="4">Job Feed</th>
+                        <!-- <th>Company</th>
+                        <th>Salary</th> -->
                         <!-- <th>Address</th>
                         <th>Job Scope</th>
                         <th>Info</th>
@@ -40,9 +40,7 @@
                     if(mysqli_num_rows($results) > 0){
                     while($postinfo=mysqli_fetch_array($results)){
                         echo "<tr>";
-                        echo "<td>".$postinfo['work']."</td>";
-                        echo "<td>".$postinfo['employer']."</td>";
-                        echo "<td>RM".$postinfo['salary']."</td>";
+                        echo "<td colspan='4'>"."<a class=\"postlink\" href=\"viewpost.php?id=".$postinfo['id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary: </b>"."RM".$postinfo['salary']."</a>"."</td>";
                         //echo "<td>".$postinfo['location']."</td>";
                         //echo "<td>".$postinfo['scope']."</td>";
                         //echo "<td>".$postinfo['addinfo']."</td>";
@@ -55,6 +53,7 @@
                         echo "<td><a href=\" deletepost.php?id=".$postinfo['id']." \">Delete</a></td>";
                         //echo "<td colspan="4">"."<hr>"."</td>";
                         echo "</tr>";
+                        //<a href=\"viewpost.php?id=".$postinfo['id']."\">
                     }
                 }else{
                     echo "<tr>";
