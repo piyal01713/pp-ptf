@@ -61,7 +61,7 @@ $date = date("Y.m.d");
             </tr>
             <tr>
                 <td>Date of Post:<br><br></td>
-                <td><input name="date_posted" type="text" value="<?php echo $date; ?>"><br><br></td>
+                <td><input name="date_posted" type="text" value="<?php echo $date; ?>" readonly><br><br></td>
             </tr>
         </tbody>
     </table>
