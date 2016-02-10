@@ -1,8 +1,11 @@
 <html>
-<head>
-    <Title>Create Post</Title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
+<style type="tex/css">
+
+.textbox {
+	margin: auto;
+	padding: 0px 10px 0px 0px;
+}
+</style>
 <body>
 <!-- Form for data input -->
 <form name="create-post" action="addpost.php" method="post">

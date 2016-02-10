@@ -17,10 +17,6 @@ if(isset($_POST['editBtn'])){
 }
 ?>
 <html>
-<head>
-    <Title>View Post</Title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
 <body>
 <form name="create-post" action="updatepost.php" method="post">
 <h1>View Post</h1>
@@ -69,7 +65,7 @@ if(isset($_POST['editBtn'])){
             $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 		if($result=mysqli_query($conn, $sql)){
 			$postinfo=mysqli_fetch_array($result);
-			 echo"<td colspan='2'><a class='editlink' href=\" updatepost.php?id=".$postinfo['id']." \">Edit</a></td></td>";
+			 echo"<td colspan='2'><a href=\" updatepost.php?id=".$postinfo['id']." \">Edit</a></td></td>";
 		}else{
 			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 		}

@@ -31,7 +31,7 @@ VALUES('$_POST[work]',
 
 if(mysqli_query($conn, $sql)){
 	echo "Your post has been saved!<br>";
-	echo "<a href='job-list.php'>Back to Job List</a>";
+	echo "<a href='Job-list.php'>Back to Job List</a>";
 }
 else{
 	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
