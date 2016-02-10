@@ -33,10 +33,6 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 }
 ?>
 <html>
-<head>
-    <Title>Edit Post</Title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
 <body>
 <form name="create-post" action="updatepost.php" method="post">
 <h1>Edit Post</h1>
