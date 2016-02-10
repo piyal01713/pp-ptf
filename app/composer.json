@@ -1,6 +1,9 @@
 {
 	"name": "faridhub95/ptf",
-    "require": {
-        "monolog/monolog": "1.0.*"
-    }
+	"require": {
+        	"monolog/monolog": "1.0.*"
+    	},
+  	"require-dev": {
+    		"heroku/heroku-buildpack-php": "*"
+  	}
 }
