@@ -97,6 +97,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 <table ="0">
     <tr>
         <td>
+            <a class="cancelbtn" href="job-list.php">CANCEL</a>
             <form action="demo_form.asp" method="get">
                 <input type="submit" name="submitBtn" value="SAVE">
             </form>

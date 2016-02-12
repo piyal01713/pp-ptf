@@ -16,7 +16,8 @@
         </header>
 
         <p class="buttonalign">
-            <a class="createbtn" href="create-post.php">Create New Post</a>
+            <a href="login.php">Login</a>
+            <a href="create-post.php">Create New Post</a>
         </p>
 
         <p>
@@ -59,7 +60,7 @@
                     echo "<tr>";
                         echo "<td>"."0 results"."</td>";
                         echo "<td>"."0 results"."</td>";
-                        echo "<td>RM"."0"."</td>";
+                        echo "<td>"."0 results"."</td>";
                         echo "<td>"."0 results"."</td>";
                         //echo "<td colspan="4">"."<hr>"."</td>";
                         echo "</tr>";

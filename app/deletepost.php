@@ -3,7 +3,7 @@ include "dbcon.php";
 
 $sql = "DELETE FROM posts WHERE id='$_GET[id]'";
 
-if(mysqli_query($conn,$sql)){
+if($result=mysqli_query($conn,$sql)){
 	header("refresh:1; url=job-list.php");
 }
 else{
