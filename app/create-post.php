@@ -65,9 +65,10 @@ $date = date("Y.m.d");
     <table ="0">
         <tr>
             <td>
+                <a class="cancelbtn" href="job-list.php">CANCEL</a>
                 <form action="demo_form.asp" method="get">
-                    <input type="reset" name="resetBtn" value="CLEAR">
-                    <input type="submit" name="submitBtn" value="POST">
+                    <input class="button" type="reset" name="resetBtn" value="CLEAR">
+                    <input class="button" type="submit" name="submitBtn" value="POST">
                 </form>
             </td>
         </tr>

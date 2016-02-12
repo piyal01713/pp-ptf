@@ -1,10 +1,11 @@
 <?php 
 include "dbcon.php";
 
-$sql = "DELETE FROM posts WHERE id='$_GET[id]'";
+$sql = "SELECT * FROM posts WHERE id='$_GET[id]'";
 
-if(mysqli_query($conn,$sql)){
-	header("refresh:1; url=job-list.php");
+if($result=mysqli_query($conn,$sql)){
+	$postinfo=mysqli_fetch_array($result);
+	//header("refresh:1; url=job-list.php");
 }
 else{
 	echo "unsucessful". "<br>". mysqli_error($conn);;
@@ -16,8 +17,11 @@ else{
 	<Title>Confirm Delete?</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body>
-	<h1>Are you sure you want to Delete</h1>
-	<a href="delmessage.php">Yes></a>
+	<body>
+
+			<h1>Are you sure you want to Delete</h1>
+			<input type="text" name="id" value="<?php echo $_GET['id']; ?>"/>
+			<a href=\" deletepost.php?id=".$postinfo['id']." \">Delete</a>
+
 </body>
 </html>
