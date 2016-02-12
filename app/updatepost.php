@@ -26,7 +26,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 		`loccat`='$_POST[loccat]',
 		`date_posted`='$_POST[date_posted]' WHERE id='$_POST[id]'";
 	     if(mysqli_query($conn, $update)){
-		    header('Location: Job-list.php');	
+		    header('Location: job-list.php');	
 	     }else{
 	     	echo "Error: ". "<br>" . $update . "<br>" . mysqli_error($conn);
 	     }
