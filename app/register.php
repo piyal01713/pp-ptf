@@ -35,6 +35,6 @@ th, td {
 			?>
 		</table>
 		<br>
-		<input type="submit" value="OK">
+		<input type="button" onclick="alert('Succed')" value="OK">
 	</body>
 </html>
