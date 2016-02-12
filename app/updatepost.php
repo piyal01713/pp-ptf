@@ -26,7 +26,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 		`loccat`='$_POST[loccat]',
 		`date_posted`='$_POST[date_posted]' WHERE id='$_POST[id]'";
 	     if(mysqli_query($conn, $update)){
-		    header('Location: job-list.php');	
+		    header('Location: index.php');	
 	     }else{
 	     	echo "Error: ". "<br>" . $update . "<br>" . mysqli_error($conn);
 	     }
@@ -97,7 +97,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 <table ="0">
     <tr>
         <td>
-            <a class="cancelbtn" href="job-list.php">CANCEL</a>
+            <a class="cancelbtn" href="index.php">CANCEL</a>
             <form action="demo_form.asp" method="get">
                 <input type="submit" name="submitBtn" value="SAVE">
             </form>
