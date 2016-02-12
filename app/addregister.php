@@ -14,7 +14,7 @@ VALUES('$_POST[name]',
 	'$_POST[pwd]')";
 
 if(mysqli_query($conn, $sql)){
-	echo "Your post has been saved!<br>";
+	echo "Your detail has been saved!<br>";
 	echo "<a href='prereg.php'>Back</a>";
 }
 else{
