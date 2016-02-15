@@ -40,7 +40,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 <body>
 <form name="create-post" action="updatepost.php" method="post">
 <h1>Edit Post</h1>
-<table border="0">
+<table border="0" width="40%">
     <tbody>
         <tr>
             <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->

@@ -24,7 +24,7 @@ if(isset($_POST['editBtn'])){
 <body>
 <form name="create-post" action="updatepost.php" method="post">
 <h1>View Post</h1>
-<table border="0">
+<table border="0" width="50%">
     <tbody>
         <tr>
         <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
@@ -40,7 +40,7 @@ if(isset($_POST['editBtn'])){
             <td>Salary:<br><br></td>
             <td>RM<?php echo $postinfo['salary']; ?> per hour<br><br></td>
         </tr>
-        <tr>
+        <tr >
             <td>Address:<br><br></td>
             <td><?php echo $postinfo['location']; ?><br><br></td>
         </tr>
