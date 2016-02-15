@@ -2,20 +2,23 @@
 session_start();
 include 'dbcon.php';
 
+if($conn){
 //insert data to table "posts"
-$sql="INSERT INTO posts(
+$sql="INSERT INTO user(
 	name,
 	email,
-	uname,
-	pwd)
+	username,
+	password,
+	date_created)
 VALUES('$_POST[name]',
 	'$_POST[email]',
 	'$_POST[uname]',
-	'$_POST[pwd]')";
+	'$_POST[pwd]',
+	'$_POST[datectd]')";
 
 if(mysqli_query($conn, $sql)){
-	echo "Your detail has been saved!<br>";
-	echo "<a href='prereg.php'>Back</a>";
+	echo "You have successfully registered a new account!<br>";
+	echo "<a href='login.php'>login</a>";
 }
 else{
 	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
