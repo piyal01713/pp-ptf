@@ -1,7 +1,7 @@
 <?php
 session_start();
+//if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
 include 'dbcon.php';
-
 if($conn){
 //declare $_POST['variable'] as variable that can escape inputed values
 $_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
