@@ -1,7 +1,3 @@
-<?php
-include 'dbcon.php';
-?>
-
 <html>
 <head><title>Job Finder</title>
 <style>
@@ -12,9 +8,20 @@ th, td {
     padding: 5px;
 }
 </style>
+<script>
+	function validateForm() {
+	    var x = document.forms["myForm"]["email"].value;
+	    var atpos = x.indexOf("@");
+	    var dotpos = x.lastIndexOf(".");
+	    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+	        alert("Not a valid e-mail address");
+	        return false;
+	    }
+	}
+</script>
 </head>
 	<h2>Registration Form</h2>
-		<form  action="register.php" method="Post">
+		<form  action="register.php" name="myForm" onsubmit="return validateForm();" method="Post">
 			<table style="width:40%">
 				<tr>
 					<td>Name: </td>

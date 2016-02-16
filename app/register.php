@@ -1,5 +1,7 @@
-<html>
-<head><title>Job Finder</title>
+<?php
+include 'dbcon.php';
+?>
+<!-- <head><title>Job Finder</title>
 <style>
 table, th, td {
     border: 1px solid white;
@@ -11,30 +13,31 @@ th, td {
 </head>
 	<body>
 		<h2>Details</h2>
-		<table style="width:30%">
+		<table style="width:30%"> -->
+<?php 
+if($conn){
+	$sql="INSERT INTO user(
+	name,
+	email,
+	username,
+	password)
+VALUES('$_POST[name]',
+	'$_POST[email]',
+	'$_POST[uname]',
+	'$_POST[pwd]')";
 
-			<?php
-			extract($_POST);
-
-				echo "<tr>";
-				echo "<td>Name: </td>";
-				echo "<td>$name</td>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "<td>E-mail: </td>";
-				echo "<td>$email";
-				echo "</tr>";
-				echo "<tr>";
-				echo "<td>Username: </td>";
-				echo "<td>$uname</td>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "<td>Password: </td>";
-				echo "<td>$pwd</td>";
-				echo "</tr>";
+if(mysqli_query($conn, $sql)){
+	echo "Your post has been saved!<br>";
+	echo "<a href='index.php'>Back to Job List</a>";
+}
+else{
+	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+}
+mysqli_close($conn);
+}
 			?>
-		</table>
+		<!-- </table>
 		<br>
 		<input type="button" onclick="alert('Succed')" value="OK">
 	</body>
-</html>
+</html> -->
