@@ -46,20 +46,20 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
             <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
 	        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
             <td>Job Title:<br><br></td>
-            <td><input name="work" type="text" value="<?php echo $postinfo['work']; ?>"><br><br></td>
+            <td><input required name="work" type="text" value="<?php echo $postinfo['work']; ?>" ><br><br></td>
         </tr>
         <tr>
             <td>Company:<br><br></td>
-            <td><input name="employer" type="text" value="<?php echo $postinfo['employer']; ?>"><br><br></td>
+            <td><input required name="employer" type="text" value="<?php echo $postinfo['employer']; ?>"><br><br></td>
         </tr>
         <tr>
             <td>Salary:<br><br></td>
-            <td>RM <input name="salary" type="text" value="<?php echo $postinfo['salary']; ?>"> (per hour)<br><br></td>
+            <td>RM <input required name="salary" type="text" value="<?php echo $postinfo['salary']; ?>"> (per hour)<br><br></td>
         </tr>
         <tr>
             <td>Address:<br><br></td>
             <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
-            <td><textarea rows="7" cols="40" maxlength="2000" name="location"><?php echo $postinfo['location']; ?></textarea><br><br></td>
+            <td><textarea required rows="7" cols="40" maxlength="2000" name="location"><?php echo $postinfo['location']; ?></textarea><br><br></td>
         </tr>
         <tr>
             <td>Job Scope:<br><br></td>

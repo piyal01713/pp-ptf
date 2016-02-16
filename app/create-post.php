@@ -15,20 +15,20 @@ $date = date("Y.m.d");
         <tbody>
             <tr>
                 <td>Job Title:<br><br></td>
-                <td><input name="work" type="text"><br><br></td>
+                <td><input name="work" type="text" required><br><br></td>
             </tr>
             <tr>
                 <td>Company:<br><br></td>
-                <td><input name="employer" type="text"><br><br></td>
+                <td><input name="employer" type="text" required><br><br></td>
             </tr>
             <tr>
                 <td>Salary:<br><br></td>
-                <td>RM <input name="salary" type="text"> (per hour)<br><br></td>
+                <td>RM <input name="salary" type="text" required> (per hour)<br><br></td>
             </tr>
             <tr>
                 <td>Address:<br><br></td>
                 <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
-                <td><textarea rows="7" cols="40" maxlength="2000" name="location"></textarea><br><br></td>
+                <td><textarea rows="7" cols="40" maxlength="2000" name="location" required></textarea><br><br></td>
             </tr>
             <tr>
                 <td>Job Scope:<br><br></td>
