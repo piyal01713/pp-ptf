@@ -1,4 +1,24 @@
 <?php
+<<<<<<< HEAD
+include 'dbcon.php';
+	
+ $sql="SELECT * FROM user";
+ $result=mysqli_query($conn, $sql);
+
+	$msg = '';
+
+	if (isset($_POST['login']) && !empty($_POST['name']) 
+	   && !empty($_POST['pwd'])) {
+		
+	   if ($userinfo['username'] == $userinfo['username'] && 
+	      $userinfo['password'] == $userinfo['password']){	      
+	      header('Location: index.php');
+	   }else {
+	      $msg = 'Wrong username or password';
+	   }
+	}
+	?>
+=======
 session_start();
 
 if(isset($_POST['login'])){
@@ -25,6 +45,7 @@ if(isset($_POST['login'])){
 }
 
 ?>
+>>>>>>> upstream/master
 <html>
 <head><title>Login</title></head>
 	<body>
@@ -39,6 +60,10 @@ if(isset($_POST['login'])){
 							<td>Password: </td>
 						</tr>
 						<tr>
+<<<<<<< HEAD
+							<td><input type="text" name="name" maxlength="15" size="20" required autocomplete="off"></td>
+							<td><input type="password" name="pwd" minlength="6" size="15" required></td>
+=======
 							<td><input type="text" name="username" maxlength="15" size="20" required autocomplete="off"></td>
 							<td><input type="password" name="password" minlength="6" size="15" required></td>
 						</tr>
@@ -52,6 +77,7 @@ if(isset($_POST['login'])){
 							
 						?>
 						</td>
+>>>>>>> upstream/master
 						</tr>
 					</table>
 					<br>
