@@ -1,3 +1,6 @@
+<?php
+//if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
+?>
 <html>
 <head>
     <Title>Create Post</Title>

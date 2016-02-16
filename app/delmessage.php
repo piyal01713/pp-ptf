@@ -1,4 +1,5 @@
 <?php 
+//if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
 include "dbcon.php";
 
 $sql = "SELECT * FROM posts WHERE id='$_GET[id]'";
