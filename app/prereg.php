@@ -1,3 +1,11 @@
+
+<?php
+
+date_default_timezone_set("Asia/Kuala_Lumpur");
+$date = date("Y.m.d");
+
+?>
+
 <html>
 <head><title>Job Finder</title>
 <style>
@@ -22,10 +30,12 @@ th, td {
 </head>
 	<h2>Registration Form</h2>
 		<form  action="register.php" name="myForm" onsubmit="return validateForm();" method="Post">
-			<table style="width:40%">
+			<table style="width:50%">
+		<form  action="addregister.php" method="Post">
+			<table style="width:50%">
 				<tr>
 					<td>Name: </td>
-					<td><input type="text" name="name" size="30"></td>
+					<td><input type="text" name="name" size="30" required></td>
 				</tr>
 				<tr>
 					<td>E-mail: </td>
@@ -33,11 +43,15 @@ th, td {
 				</tr>
 				<tr>
 					<td>Username: </td>
-					<td><input type="text" name="uname" maxlength="12" size="10"> (not more than 12 characters)</td>
+					<td><input type="text" name="uname" maxlength="12" size="10" required> (not more than 12 characters)</td>
 				</tr>
 				<tr>
 					<td>Password: </td>
-					<td><input type="password" name="pwd" minlength="6" size="10"> (at least 6 characters)</td>
+					<td><input type="password" name="pwd" minlength="6" size="10" required> (at least 6 characters)</td>
+				</tr>
+				<tr>
+				<td>Date registered:</td>
+				<td><input type="text" name="datectd" value="<?php echo $date; ?>" readonly></td>
 				</tr>
 			</table>
 			<br>

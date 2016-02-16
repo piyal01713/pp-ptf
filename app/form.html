@@ -18,6 +18,17 @@ th, td {
 	        return false;
 	    }
 	}
+    function checkPhone() {
+        var phone = document.forms["myForm"]["phone"].value;
+        var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+        if(phone.value.match(phoneNum)) {
+            return true;
+        }
+        else {
+            document.getElementById("phone").className = document.getElementById("phone").className + " error";
+            return false;
+        }
+    }
 </script>
 </head>
 	<body>
@@ -42,7 +53,7 @@ th, td {
 				</tr>
 				<tr>
 					<td>Contact Number: </td>
-					<td><input type="text" name="contact" size="10"> (ex: 012-3456789)</td>
+					<td><input type="phone" name="contact" size="10"> (ex: 012-3456789)</td>
 				</tr>
 				<tr>
 					<td>E-mail: </span></td>

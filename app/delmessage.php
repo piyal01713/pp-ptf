@@ -17,11 +17,20 @@ else{
 	<Title>Confirm Delete?</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-	<body>
+<body>
 
-			<h1>Are you sure you want to Delete</h1>
-			<input type="text" name="id" value="<?php echo $_GET['id']; ?>"/>
-			<a href=\" deletepost.php?id=".$postinfo['id']." \">Delete</a>
+	<h1>Are you sure you want to delete this post?</h1>
+	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+		<?php
+		    $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
+			if($result=mysqli_query($conn, $sql)){
+				$postinfo=mysqli_fetch_array($result);
+				echo"<a href=\" index.php \">CANCEL </a>";
+				 echo"<a href=\" deletepost.php?id=".$postinfo['id']." \">CONFIRM</a>";
+			}else{
+				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+			}
+		?>
 
 </body>
 </html>
