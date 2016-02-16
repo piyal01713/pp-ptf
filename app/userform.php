@@ -15,29 +15,29 @@ th, td {
 		<?php
 		extract($_POST);
 
-				echo"<tr>";
-				echo "<td>Name: </td>";
-				echo "<td>$name</td>";
-				echo"</tr>";
-				echo"<tr>";
-				echo "<td>Age: </td>";
-				echo "<td>$age";
-				echo"</tr>";
-				echo"<tr>";
-				echo "<td>Work Experience: </td>";
-				echo "<td>$job</td>";
-				echo"</tr>";
-				echo"<tr>";
-				echo "<td>Contact Number: </td>";
-				echo "<td>$contact</td>";
-				echo"</tr>";
-				echo"<tr>";
-				echo "<td>E-mail: </td>";
-				echo "<td>$email</td>";
-				echo"</tr>";
+			echo"<tr>";
+			echo "<td>Name: </td>";
+			echo "<td>$name</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo "<td>Age: </td>";
+			echo "<td>$age";
+			echo"</tr>";
+			echo"<tr>";
+			echo "<td>Work Experience: </td>";
+			echo "<td>$job</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo "<td>Contact Number: </td>";
+			echo "<td>$contact</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo "<td>E-mail: </td>";
+			echo "<td>$email</td>";
+			echo"</tr>";
 		?>
 		</table>
 		<br>
-		<input type="submit" value="Main Page">
+		<button type="button" onclick="alert('Succeed!')">OK</button>
 	</body>
 </html>
