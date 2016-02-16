@@ -1,6 +1,6 @@
 <?php
+//if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
 include 'dbcon.php';
-
 if(!isset($_POST['submitBtn'])){
 	$sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 		if($result=mysqli_query($conn, $sql)){
