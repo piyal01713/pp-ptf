@@ -70,7 +70,7 @@ if(isset($_POST['editBtn'])){
             $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 		if($result=mysqli_query($conn, $sql)){
 			$postinfo=mysqli_fetch_array($result);
-			 echo"<td colspan='2'><a class='editlink' href=\" updatepost.php?id=".$postinfo['id']." \">EDIT</a></td></td>";
+			 echo"<td colspan='2'><a class='editlink' href=\" form.html?id=".$postinfo['id']." \">APPLY</a></td></td>";
 		}else{
 			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 		}
