@@ -20,12 +20,17 @@ th, td {
 	}
 </script>
 </head>
+	<body>
 	<h2>Registration Form</h2>
 		<form  action="register.php" name="myForm" onsubmit="return validateForm();" method="Post">
 			<table style="width:50%">
 				<tr>
-					<td>Name: </td>
-					<td><input type="text" name="name" size="30" required></td>
+					<td>Register as: </td>
+					<td><input type="radio" name="register" value="employer">Employer</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="radio" name="register" value="employee">Employee</td>
 				</tr>
 				<tr>
 					<td>E-mail: </td>
