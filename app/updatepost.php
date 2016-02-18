@@ -15,6 +15,8 @@ if(isset($_POST['submitBtn'])){
 $_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
 $_POST['scope']=mysqli_real_escape_string($conn, $_POST['scope']);
 $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
+$_POST['work']=mysqli_real_escape_string($conn, $_POST['work']);
+$_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
 
 	$update="UPDATE posts SET `work`='$_POST[work]',
 		`employer`='$_POST[employer]',
@@ -26,7 +28,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 		`loccat`='$_POST[loccat]',
 		`date_posted`='$_POST[date_posted]' WHERE id='$_POST[id]'";
 	     if(mysqli_query($conn, $update)){
-		    header('Location: index.php');	
+		    header('Location: index1.php');	
 	     }else{
 	     	echo "Error: ". "<br>" . $update . "<br>" . mysqli_error($conn);
 	     }
@@ -97,7 +99,7 @@ $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
 <table ="0">
     <tr>
         <td>
-            <a class="cancelbtn" href="index.php">CANCEL</a>
+            <a class="cancelbtn" href="index1.php">CANCEL</a>
             <form action="demo_form.asp" method="get">
                 <input type="submit" name="submitBtn" value="SAVE">
             </form>

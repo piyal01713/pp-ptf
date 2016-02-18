@@ -9,10 +9,6 @@ include 'dbcon.php';
 				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 			}
 
-$_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
-$_POST['scope']=mysqli_real_escape_string($conn, $_POST['scope']);
-$_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
-
 if(isset($_POST['editBtn'])){
 	header('Location: updatepost.php');
 }
@@ -70,7 +66,7 @@ if(isset($_POST['editBtn'])){
             $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 		if($result=mysqli_query($conn, $sql)){
 			$postinfo=mysqli_fetch_array($result);
-			 echo"<td colspan='2'><a class='editlink' href=\" form.html?id=".$postinfo['id']." \">APPLY</a></td></td>";
+			 echo"<td colspan='2'><a class='editlink' href=\" updatepost.php?id=".$postinfo['id']." \">EDIT</a></td></td>";
 		}else{
 			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 		}

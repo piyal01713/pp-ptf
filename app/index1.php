@@ -16,7 +16,7 @@
         </header>
 
         <p class="buttonalign">
-            <a href="login.php">Login</a>
+            <a href="create-post.php">Create New Post</a>
         </p>
 
         <p>
@@ -33,6 +33,7 @@
                         <th>Job Category</th>
                         <th>Location Category</th> -->
                         <th>Date of Post</th>
+                        <th colspan="2">Options</th>
                     </tr>
                 </thead>
                 <tbody align="center">
@@ -48,7 +49,10 @@
                         //echo "<td>".$postinfo['jobcat']."</td>";
                         //echo "<td>".$postinfo['loccat']."</td>";
                         echo "<td>".$postinfo['date_posted']."</td>";
-                    
+
+                        // "\" = escape character
+                        echo "<td><a href=\" updatepost.php?id=".$postinfo['id']." \">Edit</a></td>";
+                        echo "<td><a href=\" delmessage.php?id=".$postinfo['id']." \">Delete</a></td>";
                         //echo "<td colspan="4">"."<hr>"."</td>";
                         echo "</tr>";
                         //<a href=\"viewpost.php?id=".$postinfo['id']."\">
