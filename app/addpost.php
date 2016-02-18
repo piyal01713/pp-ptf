@@ -7,6 +7,8 @@ if($conn){
 $_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
 $_POST['scope']=mysqli_real_escape_string($conn, $_POST['scope']);
 $_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
+$_POST['work']=mysqli_real_escape_string($conn, $_POST['work']);
+$_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
 
 //insert data to table "posts"
 $sql="INSERT INTO posts(
