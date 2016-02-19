@@ -8,33 +8,22 @@ th, td {
     padding: 5px;
 }
 </style>
-<script>
-	function validateForm() {
-	    var x = document.forms["myForm"]["email"].value;
-	    var atpos = x.indexOf("@");
-	    var dotpos = x.lastIndexOf(".");
-	    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-	        alert("Not a valid e-mail address");
-	        return false;
-	    }
-	}
-</script>
 </head>
 	<body>
 	<h2>Registration Form</h2>
-		<form  action="register.php" name="myForm" onsubmit="return validateForm();" method="Post">
+		<form  action="register.php" name="myForm" method="Post">
 			<table style="width:50%">
 				<tr>
 					<td>Register as: </td>
-					<td><input type="radio" name="register" value="employer">Employer</td>
+					<td><input type="radio" name="type" value="employer">Employer</td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="radio" name="register" value="employee">Employee</td>
+					<td><input type="radio" name="type" value="employee">Employee</td>
 				</tr>
 				<tr>
 					<td>E-mail: </td>
-					<td><input type="email" name="email" value=" "></td>
+					<td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"></td>
 				</tr>
 				<tr>
 					<td>Username: </td>
