@@ -17,11 +17,11 @@ th, td {
 <?php 
 if($conn){
 	$sql="INSERT INTO user(
-	name,
+	register,
 	email,
 	username,
 	password)
-VALUES('$_POST[name]',
+VALUES('$_POST[register]',
 	'$_POST[email]',
 	'$_POST[uname]',
 	'$_POST[pwd]')";
