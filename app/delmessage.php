@@ -26,7 +26,7 @@ else{
 		    $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
 			if($result=mysqli_query($conn, $sql)){
 				$postinfo=mysqli_fetch_array($result);
-				echo"<a href=\" index.php \">CANCEL </a>";
+				echo"<a href=\" index1.php \">CANCEL </a>";
 				 echo"<a href=\" deletepost.php?id=".$postinfo['id']." \">CONFIRM</a>";
 			}else{
 				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);

@@ -68,7 +68,7 @@ $date = date("Y.m.d");
     <table ="0">
         <tr>
             <td>
-                <a class="cancelbtn" href="index.php">CANCEL</a>
+                <a class="cancelbtn" href="index1.php">CANCEL</a>
                 <form action="demo_form.asp" method="get">
                     <input class="button" type="reset" name="resetBtn" value="CLEAR">
                     <input class="button" type="submit" name="submitBtn" value="POST">
