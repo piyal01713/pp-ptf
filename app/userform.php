@@ -21,7 +21,7 @@ th, td {
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Age: </td>";
-			echo "<td>$age";
+			echo "<td>$age</td>";
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Work Experience: </td>";
