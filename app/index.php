@@ -42,7 +42,8 @@
                 <table class="maintable" border="0" width="100%">
                     <thead>
                         <tr>
-                            <th class="mainth">User</th>
+                            <th class="hiddenmainth">User</th>
+                            <th class="mainth">User ID</th>
                             <th class="mainth">Job Feed</th>
                             <th class="mainth">Date of Post</th>
                         </tr>
@@ -52,8 +53,9 @@
                         if(mysqli_num_rows($results) > 0){
     		                    while($postinfo=mysqli_fetch_assoc($results)){
     		                        echo "<tr>";
-    		                        echo "<td class='maintd'>".$postinfo['id']."</td>";
-    		                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost.php?id=".$postinfo['id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary: </b>"."RM".$postinfo['salary']."</a>"."</td>";
+    		                        echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
+    		                        echo "<td class='maintd'>".$postinfo['user_id']."</td>";
+    		                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary: </b>"."RM".$postinfo['salary']."</a>"."</td>";
     		                        echo "<td class='maintd'>".$postinfo['date_posted']."</td>";
     		                        echo "</tr>";
     		                    }

@@ -2,7 +2,7 @@
 //if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
 include "dbcon.php";
 
-$sql = "SELECT * FROM posts WHERE id='$_GET[id]'";
+$sql = "SELECT * FROM posts WHERE post_id='$_GET[post_id]'";
 
 if($result=mysqli_query($conn,$sql)){
 	$postinfo=mysqli_fetch_array($result);
@@ -21,13 +21,13 @@ else{
 <body>
 
 	<h1>Are you sure you want to delete this post?</h1>
-	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+	<input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
 		<?php
-		    $sql = "SELECT * FROM posts WHERE id= $_GET[id]";
+		    $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
 			if($result=mysqli_query($conn, $sql)){
 				$postinfo=mysqli_fetch_array($result);
 				echo"<a href=\" index1.php \">CANCEL </a>";
-				 echo"<a href=\" deletepost.php?id=".$postinfo['id']." \">CONFIRM</a>";
+				 echo"<a href=\" deletepost.php?post_id=".$postinfo['post_id']." \">CONFIRM</a>";
 			}else{
 				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 			}
