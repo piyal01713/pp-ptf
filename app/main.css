@@ -1,9 +1,19 @@
-<html>
-
 <style type="text/css">
 
-.main{
-	padding: 0px 0px 0px 50px;
+html{
+	margin: auto;
+	padding: 0;
+}
+
+header{
+	margin: auto;
+	padding: 0px 5px;
+
+}
+
+body{
+	margin: auto;
+	padding: 0;
 }
 
 a{
@@ -23,14 +33,54 @@ a{
     font-size: 11px;
 }
 
-.buttonalign{
-	margin: auto;
-	text-align: right;
-
-}
-
 .postlink{
 	text-decoration:none;
 	color: black;
 }
+
+.tophead{
+	margin: auto;
+}
+
+.middlebody{
+	display:block;
+	margin: 0 70px;
+}
+
+nav{
+	margin: auto;
+	padding: 7px 10px;
+	background-color: #497285;
+	color: #d9d9d9;
+}
+
+.mainlink{
+	color: #d9d9d9;
+}
+.logoutlink{
+	color: #ffffff;
+}
+.userlink{
+	float: right;
+	padding: 0 50px 0 0;
+}
+
+
+.maintable{
+	border-collapse: collapse;
+}
+
+.mainth{
+	background-color:#2B4450;
+	color:#d9d9d9;
+	padding: 10px 0px;
+}
+
+.maintd{
+	background-image: url("/background/geometry2.png");
+	padding: 10px 0px;
+	text-align: center;
+}
+
+
 </style>
