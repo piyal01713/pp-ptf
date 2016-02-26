@@ -2,7 +2,7 @@
 //if(!isset($_SESSION["username"])){header("Location: login.php");}
 include 'dbcon.php';
 if(!isset($_POST['submitBtn'])){
-	$sql = "SELECT * FROM posts WHERE id= $_GET[id]";
+	$sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
 		if($result=mysqli_query($conn, $sql)){
 			$postinfo=mysqli_fetch_array($result);
 		}else{
@@ -26,7 +26,7 @@ $_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
 		`addinfo`='$_POST[addinfo]',
 		`jobcat`='$_POST[jobcat]',
 		`loccat`='$_POST[loccat]',
-		`date_posted`='$_POST[date_posted]' WHERE id='$_POST[id]'";
+		`date_posted`='$_POST[date_posted]' WHERE post_id='$_POST[post_id]'";
 	     if(mysqli_query($conn, $update)){
 		    header('Location: index1.php');	
 	     }else{
@@ -46,7 +46,7 @@ $_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
     <tbody>
         <tr>
             <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
-	        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+	        <input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
             <td>Job Title:<br><br></td>
             <td><input required name="work" type="text" value="<?php echo $postinfo['work']; ?>" ><br><br></td>
         </tr>
