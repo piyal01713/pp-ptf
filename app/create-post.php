@@ -26,7 +26,7 @@ $date = date("Y.m.d");
             </tr>
             <tr>
                 <td>Salary:<br><br></td>
-                <td>RM <input name="salary" type="text" required> (per hour)<br><br></td>
+                <td>RM <input name="salary" type="number" required> (per hour)<br><br></td>
             </tr>
             <tr>
                 <td>Address:<br><br></td>

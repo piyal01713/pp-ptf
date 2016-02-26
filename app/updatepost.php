@@ -1,5 +1,5 @@
 <?php
-//if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
+//if(!isset($_SESSION["username"])){header("Location: login.php");}
 include 'dbcon.php';
 if(!isset($_POST['submitBtn'])){
 	$sql = "SELECT * FROM posts WHERE id= $_GET[id]";
@@ -56,7 +56,7 @@ $_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
         </tr>
         <tr>
             <td>Salary:<br><br></td>
-            <td>RM <input required name="salary" type="text" value="<?php echo $postinfo['salary']; ?>"> (per hour)<br><br></td>
+            <td>RM <input required name="salary" type="number" value="<?php echo $postinfo['salary']; ?>"> (per hour)<br><br></td>
         </tr>
         <tr>
             <td>Address:<br><br></td>
