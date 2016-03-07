@@ -17,7 +17,7 @@ th, td {
 
 			echo"<tr>";
 			echo "<td>Name: </td>";
-			echo "<td>$name</td>";
+			echo ucwords("<td>$name</td>");
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Age: </td>";
@@ -38,6 +38,6 @@ th, td {
 		?>
 		</table>
 		<br>
-		<button type="button" onclick="alert('Succeed!')">OK</button>
+		<button type="button" onclick="alert('Succeed!')"><a href="index.php">OK</a></button>
 	</body>
 </html>
