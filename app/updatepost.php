@@ -1,10 +1,29 @@
 <?php
 //if(!isset($_SESSION["username"])){header("Location: login.php");}
 include 'dbcon.php';
+session_start();
+
+$sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
+    
+    $results1 = mysqli_query($conn, $sql1);
+
+    if(mysqli_num_rows($results1) > 0){
+    while($userinfo = mysqli_fetch_array($results1)){
+        $type = $userinfo['type'];
+        }
+    }
+
+if(!isset($_SESSION['user']) OR ($type == "employee")){
+    header('Location: index.php');
+}
+
 if(!isset($_POST['submitBtn'])){
 	$sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
 		if($result=mysqli_query($conn, $sql)){
 			$postinfo=mysqli_fetch_array($result);
+            if($_GET['post_id'] == 0){
+                header('Location: index.php');
+            }
 		}else{
 			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 		}
@@ -99,7 +118,7 @@ $_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
 <table ="0">
     <tr>
         <td>
-            <a class="cancelbtn" href="index1.php">CANCEL</a>
+            <a class="cancelbtn" href="index.php">CANCEL</a>
             <form action="demo_form.asp" method="get">
                 <input type="submit" name="submitBtn" value="SAVE">
             </form>

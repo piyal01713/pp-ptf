@@ -1,11 +1,34 @@
 <?php
     include 'dbcon.php';
-    //include 'resetid.php';
-    $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
+    session_start();
 
-    $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%'";
+    $sql = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
+    
+    $results = mysqli_query($conn, $sql);
 
-    $results= mysqli_query($conn, $sql);
+    if(mysqli_num_rows($results) > 0){
+    while($userinfo = mysqli_fetch_array($results)){
+        $type = $userinfo['type'];
+        }
+    }
+
+    if(!isset($_SESSION['user']) OR ($type == "employee")){
+    	header('Location: index.php');
+    }else{
+
+	    $sql1 = "SELECT user_id FROM user WHERE username = '$_SESSION[user]' ";
+
+	    $results1= mysqli_query($conn, $sql1);
+
+	    if(mysqli_num_rows($results1) > 0){
+		    while($userinfo1=mysqli_fetch_array($results1)){
+		    	$userid = $userinfo1['user_id'];
+		    }
+		    $sql = "SELECT * FROM posts WHERE user_id = '$userid' ";
+
+		    $results= mysqli_query($conn, $sql);
+		}
+	}
 ?>
 <html>
 <head>
@@ -16,26 +39,18 @@
 	<div class="tophead">
 	    <header>
 	        <div>
-	            <h1>PART TIME FINDER</h1>
+	            <h1>MY ADS</h1>
 	        </div>
 	    </header>
 
 	    <nav>
-	        <a class="mainlink" href="index1.php"> HOME </a>|
+	        <a class="mainlink" href="index.php"> HOME </a>|
 	        <a class="mainlink" href="#"> ABOUT </a>
-	        <div class="userlink"><a class="mainlink" href="#"> USERNAME </a>|<a class="mainlink" href="#"> MY ADS </a>|<a class="mainlink" href="create-post.php"> CREATE NEW POST </a>|<a class="logoutlink" href="index.php"> LOGOUT </a></div>
+	        <div class="userlink"><a class="username" href="#"> <?php echo $_SESSION['user']; ?> </a>|<a class="mainlink" href="index1.php"> MY ADS </a>|<a class="mainlink" href="create-post.php"> CREATE NEW POST </a>|<a class="loglink" href="logout.php"> LOGOUT </a></div>
 	    </nav>
     </div>
 
      <div class="middlebody">
-	    <p>
-	        <div class="searchalign">
-	            <form action="index.php" method="post">
-	                <input type="text" name="search" size="30" placeholder="search any available jobs...">
-	                <input type="submit" name="submit" value="SEARCH">
-	            </form>
-	        </div>
-	     </p>
         <p>
             <table class="maintable"border="0" width="100%">
                 <thead>
@@ -56,7 +71,7 @@
                 </thead>
                 <tbody align="center">
                     <?php
-                    if(mysqli_num_rows($results) > 0){
+                   if(mysqli_num_rows($results) > 0){
                     while($postinfo=mysqli_fetch_array($results)){
                         echo "<tr>";
                         echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
