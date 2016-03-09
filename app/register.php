@@ -1,43 +1,26 @@
 <?php
-include 'dbcon.php';
-?>
-<!-- <head><title>Job Finder</title>
-<style>
-table, th, td {
-    border: 1px solid white;
-}
-th, td {
-    padding: 5px;
-}
-</style>
-</head>
-	<body>
-		<h2>Details</h2>
-		<table style="width:30%"> -->
-<?php 
+include 'dbcon.php'; 
 if($conn){
+		
 	$sql="INSERT INTO user(
-	type,
-	email,
-	username,
-	password)
-VALUES('$_POST[type]',
-	'$_POST[email]',
-	'$_POST[uname]',
-	'$_POST[pwd]')";
+			type,
+			email,
+			username,
+			password,
+			date_created)
+		VALUES('$_POST[type]',
+			'$_POST[email]',
+			'$_POST[username]',
+			'$_POST[password]',
+			'$_POST[regdate]')";
 
-if(mysqli_query($conn, $sql)){
-	echo "Your post has been saved!<br>";
-	echo "<a href='login.php'>Back to Job List</a>";
-}
-else{
-	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
-}
+		if(mysqli_query($conn, $sql)){
+		echo "<h1>You have sucessfully registered</h1><br>";
+		echo "<a href='userlogin.php'>Back to login page</a>";
+		}else{
+				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+		}	
+	    
 mysqli_close($conn);
 }
-			?>
-		<!-- </table>
-		<br>
-		<input type="button" onclick="alert('Succed')" value="OK">
-	</body>
-</html> -->
+?>

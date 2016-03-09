@@ -18,7 +18,7 @@ body{
 
 a{
 	text-decoration: none;
-	color: #000000;
+	color: blue;
 }
 
 .button{
@@ -32,6 +32,11 @@ a{
     text-decoration: none; font: menu; color: ButtonText;
     display: inline-block; padding: 2px 8px;
     font-size: 11px;
+}
+
+.err{
+	text-align: center;
+	color: red;
 }
 
 .postlink{
@@ -55,10 +60,13 @@ nav{
 	color: #d9d9d9;
 }
 
+.username{
+	color: white;
+}
 .mainlink{
 	color: #d9d9d9;
 }
-.logoutlink{
+.loglink{
 	color: #ffffff;
 }
 .userlink{
