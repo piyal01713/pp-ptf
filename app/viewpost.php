@@ -15,50 +15,50 @@ if(isset($_POST['editBtn'])){
 ?>
 <html>
 <head>
-    <Title>View Post</Title>
+    <Title>Lihat Pos</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <form name="create-post" action="updatepost.php" method="post">
-<h1>View Post</h1>
+<h1>Lihat Pos</h1>
 <table border="0" width="50%">
     <tbody>
         <tr>
         <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
 	        <input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
-            <td>Job Title:<br><br></td>
+            <td>Tajuk Kerja:<br><br></td>
             <td><?php echo $postinfo['work']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Company:<br><br></td>
+            <td>Syarikat:<br><br></td>
             <td><?php echo $postinfo['employer']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Salary:<br><br></td>
+            <td>Gaji:<br><br></td>
             <td>RM<?php echo $postinfo['salary']; ?> per hour<br><br></td>
         </tr>
         <tr >
-            <td>Address:<br><br></td>
+            <td>Alamat:<br><br></td>
             <td><?php echo $postinfo['location']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Job Scope:<br><br></td>
+            <td>Skop Pekerjaan:<br><br></td>
             <td><?php echo $postinfo['scope']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Additional Info:<br><br></td>
+            <td>Maklumat Tambahan:<br><br></td>
             <td><?php echo $postinfo['addinfo']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Job Category:<br><br></td>
+            <td>Kategori Pekerjaan:<br><br></td>
             <td><?php echo $postinfo['jobcat']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Location Category:<br><br></td>
+            <td>Kategori Lokasi:<br><br></td>
             <td><?php echo $postinfo['loccat']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Date of Post:<br><br></td>
+            <td>Tarikh Pos:<br><br></td>
             <td><?php echo $postinfo['date_posted']; ?><br><br></td>
         </tr>
         <tr>

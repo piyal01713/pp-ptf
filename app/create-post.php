@@ -17,34 +17,34 @@ $date = date("Y.m.d");
     <table border="0">
         <tbody>
             <tr>
-                <td>Job Title:<br><br></td>
+                <td>Tajuk Pekerjaan:<br><br></td>
                 <td><input name="work" type="text" required><br><br></td>
             </tr>
             <tr>
-                <td>Company:<br><br></td>
+                <td>Syarikat:<br><br></td>
                 <td><input name="employer" type="text" required><br><br></td>
             </tr>
             <tr>
-                <td>Salary:<br><br></td>
-                <td>RM <input name="salary" type="number" required> (per hour)<br><br></td>
+                <td>Gaji:<br><br></td>
+                <td>RM <input name="salary" type="number" required> (satu jam)<br><br></td>
             </tr>
             <tr>
-                <td>Address:<br><br></td>
+                <td>Alamat:<br><br></td>
                 <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
                 <td><textarea rows="7" cols="40" maxlength="2000" name="location" required></textarea><br><br></td>
             </tr>
             <tr>
-                <td>Job Scope:<br><br></td>
+                <td>Skop Pekerjaan:<br><br></td>
                 <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
                 <td><textarea rows="7" cols="40" maxlength="2000" name="scope"></textarea><br><br></td>
             </tr>
             <tr>
-                <td>Additional Info:<br><br></td>
+                <td>Maklumat Tambahan:<br><br></td>
                 <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
                 <td><textarea rows="7" cols="40" maxlength="2000" name="addinfo"></textarea><br><br></td>
             </tr>
             <tr>
-                <td>Job Category:<br><br></td>
+                <td>Kategori Pekerjaan:<br><br></td>
                 <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
                 <td><select name="jobcat">
                     <option values="Services">Services</option>
@@ -52,7 +52,7 @@ $date = date("Y.m.d");
                 </select><br><br></td>
             </tr>
             <tr>
-                <td>Location Category:<br><br></td>
+                <td>Kategori Lokasi:<br><br></td>
                 <!-- setting text area box size rows= height, cols= width, maxlength= char limit  -->
                 <td><select name="loccat">
                 <option value="Kuala Lumpur">Kuala Lumpur</option>
@@ -60,7 +60,7 @@ $date = date("Y.m.d");
                 </select><br><br></td>
             </tr>
             <tr>
-                <td>Date of Post:<br><br></td>
+                <td>Tarikh Pos:<br><br></td>
                 <td><input name="date_posted" type="text" value="<?php echo $date; ?>" readonly><br><br></td>
             </tr>
         </tbody>
@@ -68,10 +68,10 @@ $date = date("Y.m.d");
     <table ="0">
         <tr>
             <td>
-                <a class="cancelbtn" href="index1.php">CANCEL</a>
+                <a class="cancelbtn" href="index1.php">BATAL</a>
                 <form action="demo_form.asp" method="get">
-                    <input class="button" type="reset" name="resetBtn" value="CLEAR">
-                    <input class="button" type="submit" name="submitBtn" value="POST">
+                    <input class="button" type="reset" name="resetBtn" value="Tetapan Semula">
+                    <input class="button" type="submit" name="submitBtn" value="POS">
                 </form>
             </td>
         </tr>

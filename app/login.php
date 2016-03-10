@@ -21,27 +21,27 @@ include 'dbcon.php';
 <head><title>Login</title></head>
 	<body>
 		<form action="login.php" method="Post">
-			<center>
-				<h2>Job Seekers!</h2>
+			<center><br>
+				<h2>Mencari Pekerja atau Pekerjaan?</h2>
 				<fieldset style="width:250">
-					<legend>Login: </legend>
+					<legend>Log Masuk: </legend>
 					<table>
 						<tr>
-							<td>Username: </td>
-							<td>Password: </td>
+							<td>Nama pengguna: </td>
+							<td>Kata Laluan: </td>
 						</tr>
 						<tr>
 							<td><input type="text" name="name" maxlength="15" size="20" required autocomplete="off"></td>
-							<td><input type="password" name="pwd" minlength="6" size="15" required></td>
+							<td><input type="password" name="pwd" minlength="6" size="20" required></td>
 
 						</tr>
 					</table>
 					<br>
-					<input type="submit" name="login" value="Login">
-					<input type="reset" value="Reset">
+					<input type="submit" name="login" value="Log Masuk">
+					<input type="reset" value="Tetap Semula">
 				</fieldset>
-				<p><i>or</i></p>
-				<p><b><i>New user? Sign up <a href="prereg.php">here. </a></b></p>
+				<p><i>atau</i></p>
+				<p><b><i>Pangguna Baru? Mendaftar <a href="prereg.php">sini. </a></b></p>
 			</center>
 		<form>
 	</body>
