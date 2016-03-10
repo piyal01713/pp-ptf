@@ -1,5 +1,23 @@
 <?php
-//if(!isset($_SESSION["usernmae"])){header("Location: login.php");}
+include 'dbcon.php';
+session_start();
+
+if(!isset($_SESSION['user'])){
+        header('Location: userlogin.php');
+}
+
+$sql="SELECT user_id FROM user WHERE username = '$_SESSION[user]' ";
+
+    $results=mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($results) > 0){
+
+            while($userinfo=mysqli_fetch_array($results)){
+                $userid =  $userinfo['user_id'];
+            }
+        }else{
+            echo "Error: some codes are not correctly placed or one of the code spelling is wrong or does not match, please check back your codes";
+        }
 ?>
 <html>
 <head>
@@ -63,12 +81,20 @@ $date = date("Y.m.d");
                 <td>Tarikh Pos:<br><br></td>
                 <td><input name="date_posted" type="text" value="<?php echo $date; ?>" readonly><br><br></td>
             </tr>
+            <tr>
+            <td>User ID</td>
+            <td><input name="userid" type="text" value="<?php echo $userid; ?>" readonly><br><br></td>
+            </tr>
         </tbody>
     </table>
     <table ="0">
         <tr>
             <td>
+<<<<<<< HEAD
                 <a class="cancelbtn" href="index1.php">BATAL</a>
+=======
+                <a class="cancelbtn" href="index.php">CANCEL</a>
+>>>>>>> upstream/master
                 <form action="demo_form.asp" method="get">
                     <input class="button" type="reset" name="resetBtn" value="Tetapan Semula">
                     <input class="button" type="submit" name="submitBtn" value="POS">

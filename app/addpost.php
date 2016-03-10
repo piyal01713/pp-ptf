@@ -1,6 +1,6 @@
 <?php
 session_start();
-//if(!isset($_SESSION["username"])){header("Location: login.php");}
+
 include 'dbcon.php';
 if($conn){
 //declare $_POST['variable'] as variable that can escape inputed values
@@ -20,7 +20,8 @@ $sql="INSERT INTO posts(
 	addinfo,
 	jobcat,
 	loccat,
-	date_posted) 
+	date_posted,
+	user_id) 
 VALUES('$_POST[work]',
 	'$_POST[employer]',
 	'$_POST[salary]',
@@ -29,7 +30,8 @@ VALUES('$_POST[work]',
 	'$_POST[addinfo]',
 	'$_POST[jobcat]',
 	'$_POST[loccat]',
-	'$_POST[date_posted]')";
+	'$_POST[date_posted]',
+	'$_POST[userid]')";
 
 if(mysqli_query($conn, $sql)){
 	echo "Your post has been saved!<br>";

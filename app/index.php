@@ -1,10 +1,39 @@
 <?php
     include 'dbcon.php';
+    session_start();
+
+    if(isset($_SESSION['user'])){
+
+        $sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
+        $results1 = mysqli_query($conn, $sql1);
+
+        if(mysqli_num_rows($results1) > 0){
+
+            while($userinfo1 = mysqli_fetch_array($results1)){
+                $type = $userinfo1['type'];
+
+                if($type == "employer"){
+                    $myads = "|<a class='mainlink' href='index1.php'> MY ADS </a>|";
+                    $create = "<a class='mainlink' href='create-post.php'> CREATE NEW POST </a>|";
+                }else{
+                    $myads = "|<a class='mainlink' href='#'> STATUS </a>|";
+                    $create = "";
+                }
+            }
+        }
+
+        $userlink = "<a class='username' href='#'>".$_SESSION['user']." </a>".$myads.$create."<a class='loglink' href='logout.php'> LOGOUT </a>";
+    }else{
+        $userlink = "<a class='loglink' href='userlogin.php'> LOGIN </a>";
+    }
+
     $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
 
     $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%'";
 
     $results= mysqli_query($conn, $sql);
+
+
 ?>
 <html>
     <head>
@@ -16,14 +45,20 @@
         <div class="tophead">
             <header>
                 <div>
-                    <h1>PART TIME FINDER</h1>
+                    <h1>PART TIME FINDER </h1>
                 </div>
             </header>
 
             <nav>
+<<<<<<< HEAD
                 <a class="mainlink" href="index.php"> UTAMA </a>|
                 <a class="mainlink" href="#"> MENGENAI </a>
                <div class="userlink"><a class="mainlink" href="login.php"> LOG MASUK </a></div>
+=======
+                <a class="mainlink" href="index.php"> HOME </a>|
+                <a class="mainlink" href="#"> ABOUT </a>
+               <div class="userlink"><?php echo $userlink; ?></div>
+>>>>>>> upstream/master
             </nav>
         </div>
 
@@ -51,7 +86,7 @@
                     <tbody>
                         <?php
                         if(mysqli_num_rows($results) > 0){
-    		                    while($postinfo=mysqli_fetch_assoc($results)){
+    		                    while($postinfo=mysqli_fetch_array($results)){
     		                        echo "<tr>";
     		                        echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
     		                        echo "<td class='maintd'>".$postinfo['user_id']."</td>";
