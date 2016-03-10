@@ -44,9 +44,15 @@
 	    </header>
 
 	    <nav>
+<<<<<<< HEAD
+	        <a class="mainlink" href="index1.php"> UTAMA </a>|
+	        <a class="mainlink" href="#"> MENGENAI </a>
+	        <div class="userlink"><a class="mainlink" href="#"> NAMA PENGGUNA </a>|<a class="mainlink" href="#"> MY-IKLAN </a>|<a class="mainlink" href="create-post.php"> JAWATAN BARU </a>|<a class="logoutlink" href="index.php"> LOG KELUAR </a></div>
+=======
 	        <a class="mainlink" href="index.php"> HOME </a>|
 	        <a class="mainlink" href="#"> ABOUT </a>
 	        <div class="userlink"><a class="username" href="#"> <?php echo $_SESSION['user']; ?> </a>|<a class="mainlink" href="index1.php"> MY ADS </a>|<a class="mainlink" href="create-post.php"> CREATE NEW POST </a>|<a class="loglink" href="logout.php"> LOGOUT </a></div>
+>>>>>>> upstream/master
 	    </nav>
     </div>
 
@@ -55,9 +61,9 @@
             <table class="maintable"border="0" width="100%">
                 <thead>
                     <tr>
-                        <th class="hiddenmainth">User</th>
-                        <th class="mainth">User ID</th>
-                        <th class="mainth">Job Feed</th>
+                        <th class="hiddenmainth">Pengguna</th>
+                        <th class="mainth">ID Pengguna</th>
+                        <th class="mainth">Jawatan Kosong</th>
                         <!-- <th>Companies</th>
                         <th>Salary</th> -->
                         <!-- <th>Address</th>
@@ -65,8 +71,8 @@
                         <th>Info</th>
                         <th>Job Category</th>
                         <th>Location Category</th> -->
-                        <th class="mainth">Date of Post</th>
-                        <th class="mainth" colspan="2">Options</th>
+                        <th class="mainth">Tarikh Pos</th>
+                        <th class="mainth" colspan="2">Pilihan</th>
                     </tr>
                 </thead>
                 <tbody align="center">

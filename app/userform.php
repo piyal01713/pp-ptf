@@ -16,28 +16,32 @@ th, td {
 		extract($_POST);
 
 			echo"<tr>";
-			echo "<td>Name: </td>";
-			echo ucwords("<td>$name</td>");
+			echo "<td>Nama: </td>";
+			echo strtoupper("<td>$name</td>");
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Age: </td>";
+			echo "<td>Umur: </td>";
 			echo "<td>$age</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Work Experience: </td>";
-			echo "<td>$job</td>";
+			echo "<td>Pengalaman Bekerja: </td>";
+			echo "<td>$job / $area</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Contact Number: </td>";
+			echo "<td>Lampirkan Resume: </td>";
+			echo "<td>$file</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo "<td>Nombor Telefon: </td>";
 			echo "<td>$contact</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>E-mail: </td>";
+			echo "<td>Emel: </td>";
 			echo "<td>$email</td>";
 			echo"</tr>";
 		?>
 		</table>
 		<br>
-		<button type="button" onclick="alert('Succeed!')"><a href="index.php">OK</a></button>
+		<button type="button" onclick="alert('Berjaya!')"><a href="index.php">OK</a></button>
 	</body>
 </html>
