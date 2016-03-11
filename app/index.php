@@ -33,7 +33,6 @@
 
     $results= mysqli_query($conn, $sql);
 
-
 ?>
 <html>
     <head>
@@ -90,7 +89,7 @@
     		                        echo "<tr>";
     		                        echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
     		                        echo "<td class='maintd'>".$postinfo['user_id']."</td>";
-    		                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary: </b>"."RM".$postinfo['salary']."</a>"."</td>";
+    		                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary(Per Hour): </b>"."RM".$postinfo['salary']."</a>"."</td>";
     		                        echo "<td class='maintd'>".$postinfo['date_posted']."</td>";
     		                        echo "</tr>";
     		                    }

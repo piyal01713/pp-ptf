@@ -2,6 +2,10 @@
 include 'dbcon.php';
 session_start();
 
+if(isset($_SESSION['user'])){
+    	header('Location: index.php');
+}
+
  $sql="SELECT * FROM user ";
 
  $results=mysqli_query($conn, $sql);
@@ -33,11 +37,11 @@ session_start();
 </head>
 	<body>
 		<form action="userlogin.php" method="Post">
-			<center>
+			<div class="middlefield">
 				<h2>Job Seekers!</h2>
-				<fieldset style="width:250">
+				<fieldset class="regfieldbox" style="width:250">
 					<legend>Login: </legend>
-					<table>
+					<table class="fieldtable">
 						<tr>
 							<td>Username: </td>
 							<td>Password: </td>
@@ -57,7 +61,7 @@ session_start();
 				</fieldset>
 				<p><i>or</i></p>
 				<p><b><i>New user? Sign up <a href="prereg.php">here. </a></b></p>
-			</center>
+			</div>
 		<form>
 	</body>
 </html>
