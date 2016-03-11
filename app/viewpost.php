@@ -41,7 +41,7 @@ session_start();
 <body>
 <form name="create-post" action="updatepost.php" method="post">
 <h1>View Post</h1>
-<table border="0" width="50%">
+<table class="viewtable" border="0" width="50%">
     <tbody>
         <tr>
         <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
