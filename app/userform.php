@@ -17,7 +17,7 @@ th, td {
 
 			echo"<tr>";
 			echo "<td>Nama: </td>";
-			echo strtoupper("<td>$name</td>");
+			echo ucfirst("<td>$name</td>");
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Umur: </td>";
