@@ -30,7 +30,7 @@
 
 		?>
 		</table>
-		<a href="userpage.html"><button type="button" value="update">Update Profile</a>
-		<a href="index1.php"><button type="button" value="utama">Home</a>
+		<a href="userpage.html"><button type="button" value="Update Profile">Update Profile</a>
+		<a href="index1.php"><button type="button" value="Home">Home</a>
 	</body>
 </html>

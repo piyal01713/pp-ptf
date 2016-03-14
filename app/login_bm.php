@@ -13,12 +13,12 @@ include 'dbcon.php';
 	      $userinfo['password'] == $userinfo['password']){	      
 	      header('Location: index.php');
 	   }else {
-	      $msg = 'Wrong username or password';
+	      $msg = 'Salah memasukkan nama pengguna atau kata laluan';
 	   }
 	}
 	?>
 <html>
-<head><title>Login</title></head>
+<head><title>Log Masuk</title></head>
 	<body>
 		<form action="login.php" method="Post">
 			<center><br>

@@ -37,10 +37,10 @@ include 'dbcon.php';
 						</tr>
 					</table>
 					<br>
-					<input type="submit" name="login" value="Log Masuk">
-					<input type="reset" value="Tetap Semula">
+					<input type="submit" name="login" value="Login">
+					<input type="reset" value="Reset">
 				</fieldset>
-				<p><i>atau</i></p>
+				<p><i>or</i></p>
 				<p><b><i>New user? Register <a href="prereg.php">here. </a></b></p>
 			</center>
 		<form>
