@@ -90,11 +90,7 @@ $date = date("Y.m.d");
     <table ="0">
         <tr>
             <td>
-<<<<<<< HEAD
-                <a class="cancelbtn" href="index1.php">BATAL</a>
-=======
                 <a class="cancelbtn" href="index.php">CANCEL</a>
->>>>>>> upstream/master
                 <form action="demo_form.asp" method="get">
                     <input class="button" type="reset" name="resetBtn" value="Tetapan Semula">
                     <input class="button" type="submit" name="submitBtn" value="POS">

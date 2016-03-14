@@ -5,7 +5,6 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 $regdate = date("Y.m.d");
 ?>
 <html>
-<<<<<<< HEAD
 <head><title>Register</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>

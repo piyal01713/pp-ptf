@@ -24,6 +24,7 @@
 
         $userlink = "<a class='username' href='#'>".$_SESSION['user']." </a>".$myads.$create."<a class='loglink' href='logout.php'> LOGOUT </a>";
     }else{
+
         $userlink = "<a class='loglink' href='userlogin.php'> LOGIN </a>";
     }
 
@@ -32,6 +33,14 @@
     $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%'";
 
     $results= mysqli_query($conn, $sql);
+
+    $ql2 = "SELECT username FROM user";
+    $results2 = mysqli_query($conn, $sql2);
+    if(mysqli_num_rows($results2) > 0){
+         while($userinfo2=mysqli_fetch_array($results2)){
+            echo $userinfo2['username'];
+        }
+    }
 
 ?>
 <html>
