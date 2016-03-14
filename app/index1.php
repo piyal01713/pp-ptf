@@ -44,15 +44,9 @@
 	    </header>
 
 	    <nav>
-<<<<<<< HEAD
-	        <a class="mainlink" href="index1.php"> UTAMA </a>|
-	        <a class="mainlink" href="#"> MENGENAI </a>
-	        <div class="userlink"><a class="mainlink" href="#"> NAMA PENGGUNA </a>|<a class="mainlink" href="#"> MY-IKLAN </a>|<a class="mainlink" href="create-post.php"> JAWATAN BARU </a>|<a class="logoutlink" href="index.php"> LOG KELUAR </a></div>
-=======
 	        <a class="mainlink" href="index.php"> HOME </a>|
 	        <a class="mainlink" href="#"> ABOUT </a>
 	        <div class="userlink"><a class="username" href="#"> <?php echo $_SESSION['user']; ?> </a>|<a class="mainlink" href="index1.php"> MY ADS </a>|<a class="mainlink" href="create-post.php"> CREATE NEW POST </a>|<a class="loglink" href="logout.php"> LOGOUT </a></div>
->>>>>>> upstream/master
 	    </nav>
     </div>
 

@@ -31,11 +31,7 @@ if(isset($_POST['submitbtn'])){
 }else{
 	echo "not sent";
 }
-
-	
-
 ?>
-
 <html>
 <head>
 <title>Apply Preview</title>

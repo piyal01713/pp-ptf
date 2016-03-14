@@ -49,15 +49,9 @@
             </header>
 
             <nav>
-<<<<<<< HEAD
-                <a class="mainlink" href="index.php"> UTAMA </a>|
-                <a class="mainlink" href="#"> MENGENAI </a>
-               <div class="userlink"><a class="mainlink" href="login.php"> LOG MASUK </a></div>
-=======
                 <a class="mainlink" href="index.php"> HOME </a>|
                 <a class="mainlink" href="#"> ABOUT </a>
                <div class="userlink"><?php echo $userlink; ?></div>
->>>>>>> upstream/master
             </nav>
         </div>
 
