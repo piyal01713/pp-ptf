@@ -50,7 +50,15 @@ a{
 
 .middlebody{
 	display:block;
-	margin: 0 70px;
+	margin: auto;
+	padding: 0 70px;
+}
+
+.middlefield{
+	margin: auto;
+	padding: 0 15%;
+	text-align: center;
+	
 }
 
 nav{
@@ -73,8 +81,9 @@ nav{
 	float: right;
 	padding: 0 50px 0 0;
 }
-
-
+.fieldtable{
+	width: 80%;
+}
 .maintable{
 	border-collapse: collapse;
 }
@@ -97,6 +106,13 @@ nav{
 
 .hiddenmaintd{
 	display:none;
+}
+
+.regfieldbox{
+
+	text-align:center;
+	width: 50%;
+	margin: auto;
 }
 
 
