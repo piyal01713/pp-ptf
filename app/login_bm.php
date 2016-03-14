@@ -22,13 +22,13 @@ include 'dbcon.php';
 	<body>
 		<form action="login.php" method="Post">
 			<center><br>
-				<h2>Looking forJob or Worker?</h2>
+				<h2>Mencari Pekerja atau Pekerjaan?</h2>
 				<fieldset style="width:250">
-					<legend>Login: </legend>
+					<legend>Log Masuk: </legend>
 					<table>
 						<tr>
-							<td>User Name: </td>
-							<td>Password: </td>
+							<td>Nama pengguna: </td>
+							<td>Kata Laluan: </td>
 						</tr>
 						<tr>
 							<td><input type="text" name="name" maxlength="15" size="20" required autocomplete="off"></td>
@@ -41,7 +41,7 @@ include 'dbcon.php';
 					<input type="reset" value="Tetap Semula">
 				</fieldset>
 				<p><i>atau</i></p>
-				<p><b><i>New user? Register <a href="prereg.php">here. </a></b></p>
+				<p><b><i>Pangguna Baru? Mendaftar <a href="prereg.php">sini. </a></b></p>
 			</center>
 		<form>
 	</body>

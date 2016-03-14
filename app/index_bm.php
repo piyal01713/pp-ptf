@@ -50,9 +50,9 @@
             </header>
 
             <nav>
-                <a class="mainlink" href="index.php"> HOME </a>|
-                <a class="mainlink" href="#"> ABOUT </a>
-               <div class="userlink"><?php echo $userlink; ?></div>
+                <a class="mainlink" href="index.php"> UTAMA </a>|
+                <a class="mainlink" href="#"> MENGENAI </a>
+               <div class="userlink"><a class="mainlink" href="login.php"> LOG MASUK </a></div>
             </nav>
         </div>
 
@@ -71,10 +71,10 @@
                 <table class="maintable" border="0" width="100%">
                     <thead>
                         <tr>
-                            <th class="hiddenmainth">User</th>
-                            <th class="mainth">User ID</th>
-                            <th class="mainth">Job Feeds</th>
-                            <th class="mainth">Date Post</th>
+                            <th class="hiddenmainth">Pengguna</th>
+                            <th class="mainth">ID Pengguna</th>
+                            <th class="mainth">Jawatan Kosong</th>
+                            <th class="mainth">Tarikh Pos</th>
                         </tr>
                     </thead>
                     <tbody>

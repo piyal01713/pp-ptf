@@ -7,74 +7,74 @@ session_start();
         header('Location: userlogin.php');
     }
 
-	$sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
-			if($result=mysqli_query($conn, $sql)){
-				$postinfo=mysqli_fetch_array($result);
-			}else{
-				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
-			}
+    $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
+            if($result=mysqli_query($conn, $sql)){
+                $postinfo=mysqli_fetch_array($result);
+            }else{
+                echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+            }
 
 if(isset($_POST['editBtn'])){
-	header('Location: updatepost.php');
+    header('Location: updatepost.php');
 }
 ?>
 <html>
 <head>
-    <Title>View Post</Title>
+    <Title>Lihat Pos</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <form name="create-post" action="updatepost.php" method="post">
-<h1>View Post</h1>
+<h1>Lihat Pos</h1>
 <table border="0" width="50%">
     <tbody>
         <tr>
         <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
-	        <input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
-            <td>Job Title:<br><br></td>
+            <input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
+            <td>Tajuk Pekerjaan:<br><br></td>
             <td><?php echo $postinfo['work']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Employer:<br><br></td>
+            <td>Syarikat:<br><br></td>
             <td><?php echo $postinfo['employer']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Salary:<br><br></td>
+            <td>Gaji:<br><br></td>
             <td>RM<?php echo $postinfo['salary']; ?> per hour<br><br></td>
         </tr>
         <tr >
-            <td>Address:<br><br></td>
+            <td>Alamat:<br><br></td>
             <td><?php echo $postinfo['location']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Scope of Work:<br><br></td>
+            <td>Skop Pekerjaan:<br><br></td>
             <td><?php echo $postinfo['scope']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Additional Info:<br><br></td>
+            <td>Maklumat Tambahan:<br><br></td>
             <td><?php echo $postinfo['addinfo']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Job Category:<br><br></td>
+            <td>Kategori Pekerjaan:<br><br></td>
             <td><?php echo $postinfo['jobcat']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Location Category:<br><br></td>
+            <td>Kategori Lokasi:<br><br></td>
             <td><?php echo $postinfo['loccat']; ?><br><br></td>
         </tr>
         <tr>
-            <td>Date Post:<br><br></td>
+            <td>Tarikh Pos:<br><br></td>
             <td><?php echo $postinfo['date_posted']; ?><br><br></td>
         </tr>
         <tr>
         <?php
             $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
-		if($result=mysqli_query($conn, $sql)){
-			$postinfo=mysqli_fetch_array($result);
-			 echo"<td colspan='2'><a class='editlink' href=\" updatepost.php?post_id=".$postinfo['post_id']." \">EDIT</a></td></td>";
-		}else{
-			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
-		}
+        if($result=mysqli_query($conn, $sql)){
+            $postinfo=mysqli_fetch_array($result);
+             echo"<td colspan='2'><a class='editlink' href=\" updatepost.php?post_id=".$postinfo['post_id']." \">EDIT</a></td></td>";
+        }else{
+            echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+        }
             ?>
         </tr>
     </tbody>
