@@ -24,7 +24,7 @@
 		    while($userinfo1=mysqli_fetch_array($results1)){
 		    	$userid = $userinfo1['user_id'];
 		    }
-		    $sql = "SELECT * FROM posts WHERE user_id = '$userid' ";
+		    $sql = "SELECT * FROM posts WHERE user_id = '$userid' ORDER BY date_posted DESC ";
 
 		    $results= mysqli_query($conn, $sql);
 		}
@@ -55,8 +55,6 @@
             <table class="maintable"border="0" width="100%">
                 <thead>
                     <tr>
-                        <th class="hiddenmainth">User</th>
-                        <th class="mainth">User ID</th>
                         <th class="mainth">Job Feeds</th>
                         <!-- <th>Companies</th>
                         <th>Salary</th> -->
@@ -74,8 +72,8 @@
                    if(mysqli_num_rows($results) > 0){
                     while($postinfo=mysqli_fetch_array($results)){
                         echo "<tr>";
+
                         echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
-                        echo "<td class='maintd'>".$postinfo['user_id']."</td>";
                         echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost1.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary: </b>"."RM".$postinfo['salary']."</a>"."</td>";
                         //echo "<td>".$postinfo['location']."</td>";
                         //echo "<td>".$postinfo['scope']."</td>";
