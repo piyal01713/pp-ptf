@@ -21,12 +21,12 @@ if(!isset($_SESSION['user'])){
 ?>
 <html>
 <head>
-	<Title>Confirm Delete?</Title>
+	<Title>Pengesahan Padam?</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 
-	<h1>Are you confirm delete this post?</h1>
+	<h1>Adakah anda pasti mahu memadam pos ini?</h1>
 	<input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
 		<?php
 		    $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
