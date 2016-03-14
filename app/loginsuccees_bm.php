@@ -11,6 +11,6 @@ else{
 
 <html>
 <body>
-Login Succees!
+Log Masuk Berjaya!
 </body>
 </html>
