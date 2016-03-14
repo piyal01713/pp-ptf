@@ -40,17 +40,8 @@ session_start();
 </head>
 <body>
 <form name="create-post" action="updatepost.php" method="post">
-<<<<<<< HEAD
-<h1>View Post</h1>
-=======
-<<<<<<< HEAD
 <h1>View Post</h1>
 <table class="viewtable" border="0" width="50%">
-=======
-<h1>Lihat Pos</h1>
->>>>>>> upstream/master
-<table border="0" width="50%">
->>>>>>> upstream/master
     <tbody>
         <tr>
         <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->

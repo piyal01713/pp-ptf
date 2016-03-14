@@ -32,13 +32,8 @@ if(!isset($_SESSION['user'])){
 		    $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
 			if($result=mysqli_query($conn, $sql)){
 				$postinfo=mysqli_fetch_array($result);
-<<<<<<< HEAD
-				echo"<a href=\" index1.php \">BATAL </a>";
-				 echo"<a href=\" deletepost.php?post_id=".$postinfo['post_id']." \">PASTI</a>";
-=======
 				echo"<a href=\" index.php \">CANCEL </a>";
 				 echo"<a href=\" deletepost.php?post_id=".$postinfo['post_id']." \">CONFIRM</a>";
->>>>>>> upstream/master
 			}else{
 				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 			}
