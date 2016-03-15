@@ -60,9 +60,12 @@ CREATE TABLE `posts` (
   `jobcat` varchar(100) DEFAULT NULL,
   `loccat` varchar(100) DEFAULT NULL,
   `date_posted` date DEFAULT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +74,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES ('Mechanics','Tools Sdn.Bhd.',10,'Taman 123,\r\nJalan 1/23,\r\nTaman Area 123,\r\n52100 Kuala Lumpur.','Employee will be hired as an assistant','Starts at 10.00am to 2.00pm','Services','Kuala Lumpur','2016-02-02',1),('Janitor','Mr.Clean',20,'Area Pandan Jaya,\r\nJalan 3/2,\r\nPandan Jaya,\r\n55300 Kuala Lumpur','work by mopping floors','Starts at 9.00am - 3.00pm','Services','Kuala Lumpur','2016-02-03',2),('Programmer','Pocketpixel',150,'jdhajhc jksdhkjnknfnsfkjsnf ajfhdsljfhdlsjfhsdp','programming user requirement big data analysis social media research','were looking for someone whos capable and smart. and cool. and nice.','Services','Selangor','2016-02-15',3),('Clerk','shopshop',15,'Jalan Raya Besar\r\nJalan 1/1\r\nJalan Besar\r\n55000 Kuala Lumpur','Work as a clerk','needs to be 18 years old or older.','Services','Kuala Lumpur','2016-02-15',4),('Dispatch','Speedy Co.',20,'Taman Besar\r\nJalan 4/4\r\nTaman Jalan Besar\r\n58100 Kuala Lumpur','Work as a dispatcher','The person needs to have own vehicle','Services','Kuala Lumpur','2016-02-15',5),('\'\'\'\'\'\'','\'\'\'\'\'\'',123321,'\'\'\'\'\'\'','\'\'\'\'\'\'','\'\'\'\'\'\'','Services','Kuala Lumpur','2016-02-17',6);
+INSERT INTO `posts` VALUES ('Mechanics','Tools Sdn.Bhd.',10,'Taman 123,\r\nJalan 1/23,\r\nTaman Area 123,\r\n52100 Kuala Lumpur.','Employee will be hired as an assistant','Starts at 10.00am to 2.00pm','Services','Kuala Lumpur','2016-02-02',1,1),('Programmer','Pocketpixel',150,'jdhajhc jksdhkjnknfnsfkjsnf ajfhdsljfhdlsjfhsdp','programming user requirement big data analysis social media research','were looking for someone whos capable and smart. and cool. and nice.','Services','Selangor','2016-02-15',3,3),('Clerk','shopshop',15,'Jalan Raya Besar\r\nJalan 1/1\r\nJalan Besar\r\n55000 Kuala Lumpur','Work as a clerk','needs to be 18 years old or older.','Services','Kuala Lumpur','2016-02-15',4,4),('Dispatch','Speedy Co.',20,'Taman Besar\r\nJalan 4/4\r\nTaman Jalan Besar\r\n58100 Kuala Lumpur','Work as a dispatcher','The person needs to have own vehicle','Services','Kuala Lumpur','2016-02-15',5,5),('adsadsa','dsadsadsa',1231,'dsadsadsa','dsadsadsa','sadsadsa','Services','Kuala Lumpur','2016-03-10',11,2),('asdsa','dasd',2131,'asdsa','dasda','dasdsa','Services','Kuala Lumpur','2016-03-14',13,2);
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,10 +90,10 @@ CREATE TABLE `user` (
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `date_created` date DEFAULT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +102,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('deud@deud.com','admin','admindude','2016-02-16',1,'employer');
+INSERT INTO `user` VALUES ('deud@deud.com','admin','admindude','2016-02-16',1,'employer'),('farid@gmail.com','farid','123abc','2016-02-26',2,'employer'),('ali@yahoo.com','ali','gcb123','2016-02-26',3,'employer'),('abu@yahoo.com','abu','abu123','2016-02-26',4,'employer'),('zack@yahoo.com','zack','zac123','2016-02-26',5,'employer');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-19 11:05:38
+-- Dump completed on 2016-03-15 14:53:48
