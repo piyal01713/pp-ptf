@@ -1,61 +1,62 @@
 <?php
 include 'dbcon.php';
 session_start();
+
 if(isset($_SESSION['user'])){
-    	header('Location: index.php');
-} 
-if($conn){
+header('Location: index.php');
+}
 
-	$sql1="SELECT username,email FROM user WHERE username = '$_POST[username]' ";
-	$results1=mysqli_query($conn, $sql1);
+if(($_POST['email'] == "") && ($_POST['username'] == "")){
 
-			if(mysqli_num_rows($results1) > 0){
+	$emailerror = "";
+	$usererror = "";
+	$passerror = "";
 
-				while($userinfo=mysqli_fetch_array($results1)){
+}else{
 
-				$uservalidation = '';
-				$emailvalidation = '';
-				$confirmpwd = '';
+	$sql1 = "SELECT username,email FROM user WHERE username = '$_POST[username]' ";
+	$results1 = mysqli_query($conn, $sql1);
+	$rows = mysqli_num_rows($results1);
+	$compare = mysqli_fetch_array($results1);
+	$affected = mysqli_affected_rows($conn);
 
-				$userinfo['username'];
-				$userinfo['email'];
+	$compare['email'];
+	$compare['username'];
+	
+	if($_POST['confirmpwd'] != $_POST['password']){
 
+		$passerror = "Your Password Didn't Match";
 
-					if($_POST['email'] == $userinfo['email']){
+	}elseif($_POST['username'] == $compare['username']){
 
-						$emailvalidation = 'This email has already been registered';
+		$usererror = "This Username Has Been Taken";
 
-					}elseif($_POST['username'] == $userinfo['username']){
-							
-							$uservalidation = 'This username already exist';
+	}else{
 
-					}elseif($_POST['confirmpwd'] == $_POST['password']){
+		$sql="INSERT INTO user(
+				type,
+				email,
+				username,
+				password,
+				date_created)
+			VALUES('$_POST[type]',
+				'$_POST[email]',
+				'$_POST[username]',
+				'$_POST[password]',
+				'$_POST[regdate]')";
 
-						$sql="INSERT INTO user(
-								type,
-								email,
-								username,
-								password,
-								date_created)
-							VALUES('$_POST[type]',
-								'$_POST[email]',
-								'$_POST[username]',
-								'$_POST[password]',
-								'$_POST[regdate]')";
-
-							if(mysqli_query($conn, $sql)){
-							echo "<h1>You have sucessfully registered</h1><br>";
-							echo "<a href='userlogin.php'>Back to login page</a>";
-							}else{
-									echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
-							}
-					}else{
-
-						$confirmpwd = 'It is not a match';
-					}
-					
-				}
+			if(mysqli_query($conn, $sql)){
+			echo "<center>";
+			echo "<h1>You have sucessfully registered</h1><br>";
+			echo "<a href='userlogin.php'>Please login after register</a>";
+			echo "</center>";
+			}else{
+				//echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+				$emailerror = "This Email Has Already Exist";
 			}
-mysqli_close($conn);
+
+			mysqli_close($conn);
+	}
+
 }
 ?>

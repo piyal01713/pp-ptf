@@ -13,16 +13,16 @@ $regdate = date("Y.m.d");
 	<h2>Registration Form</h2>
 		<fieldset class="regfieldbox">
 		<legend>Register: </legend>
-				<form  action="" name="myForm" method="Post">
+				<form  action="" name="prereg.php" method="post">
 					<table class="fieldtable" align="center" border="0">
 					<tbody>
 						<tr>
 							<td class="viewtd">E-mail: </td>
-							<td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br><?php echo $emailvalidation; ?></td>
+							<td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br><?php echo $emailerror; ?></td>
 						</tr>
 						<tr>
 							<td>Username: </td>
-							<td><input type="text" name="username" maxlength="12" size="20" required><br><?php echo $uservalidation; ?></td>
+							<td><input type="text" name="username" maxlength="12" size="20" required><br><?php echo $usererror; ?></td>
 						</tr>
 						<tr>
 							<td>Password: </td>
@@ -30,11 +30,11 @@ $regdate = date("Y.m.d");
 						</tr>
 						<tr>
 							<td>Confirm Password: </td>
-							<td><input type="password" name="confirmpwd" minlength="6" size="20" required><br><?php echo $confirmpwd; ?></td>
+							<td><input type="password" name="confirmpwd" minlength="6" size="20" required><br><?php echo $passerror; ?></td>
 						</tr>
 						<tr>
 							<td>Register as: </td>
-							<td><input type="radio" name="type" value="employer">Employer<br>
+							<td><input type="radio" name="type" value="employer" required>Employer<br>
 							<br>
 							<input type="radio" name="type" value="employee">Employee</td>
 						</tr>

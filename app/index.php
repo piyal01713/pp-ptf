@@ -30,17 +30,9 @@
 
     $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
 
-    $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%'";
+    $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
 
     $results= mysqli_query($conn, $sql);
-
-    $ql2 = "SELECT username FROM user";
-    $results2 = mysqli_query($conn, $sql2);
-    if(mysqli_num_rows($results2) > 0){
-         while($userinfo2=mysqli_fetch_array($results2)){
-            echo $userinfo2['username'];
-        }
-    }
 
 ?>
 <html>
@@ -80,18 +72,33 @@
                     <thead>
                         <tr>
                             <th class="hiddenmainth">User</th>
-                            <th class="mainth">User ID</th>
+                            <th class="mainth">By</th>
                             <th class="mainth">Job Feeds</th>
-                            <th class="mainth">Date Post</th>
+                            <th class="mainth">Date Posted</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         if(mysqli_num_rows($results) > 0){
     		                    while($postinfo=mysqli_fetch_array($results)){
-    		                        echo "<tr>";
+
+                                    echo "<tr>";
+
+                                    $sql2 = "SELECT username FROM user WHERE user_id = '$postinfo[user_id]' ";
+
+                                    $results2 = mysqli_query($conn, $sql2);
+
+                                    if(mysqli_num_rows($results2) > 0){
+
+                                         while($userinfo2=mysqli_fetch_array($results2)){
+
+                                            echo "<td class='maintd'>".$userinfo2['username']."</td>";
+
+                                        }
+                                    }
+
+    		                        
     		                        echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
-    		                        echo "<td class='maintd'>".$postinfo['user_id']."</td>";
     		                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary(Per Hour): </b>"."RM".$postinfo['salary']."</a>"."</td>";
     		                        echo "<td class='maintd'>".$postinfo['date_posted']."</td>";
     		                        echo "</tr>";
