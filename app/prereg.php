@@ -1,8 +1,8 @@
 <?php
 include'dbcon.php';
+include'register.php';
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $regdate = date("Y.m.d");
-}
 ?>
 <html>
 <head><title>Register</title>
@@ -13,7 +13,7 @@ $regdate = date("Y.m.d");
 	<h2>Registration Form</h2>
 		<fieldset class="regfieldbox">
 		<legend>Register: </legend>
-				<form  action="register.php" name="prereg.php" method="post">
+				<form  action="" name="prereg.php" method="post">
 					<table class="fieldtable" align="center" border="0">
 					<tbody>
 						<tr>
@@ -30,11 +30,11 @@ $regdate = date("Y.m.d");
 						</tr>
 						<tr>
 							<td>Confirm Password: </td>
-							<td><input type="password" name="confirmpwd" minlength="6" size="20" required><br></td>
+							<td><input type="password" name="confirmpwd" minlength="6" size="20" required><br><?php echo $passerror; ?></td>
 						</tr>
 						<tr>
 							<td>Register as: </td>
-							<td><input type="radio" name="type" value="employer">Employer<br>
+							<td><input type="radio" name="type" value="employer" required>Employer<br>
 							<br>
 							<input type="radio" name="type" value="employee">Employee</td>
 						</tr>
