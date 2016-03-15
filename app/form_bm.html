@@ -15,35 +15,35 @@
 </head>
 	<body>
 		<h2>Borang Permohonan</h2>
-		<form  action="userform.php" name="myForm" method="Post">
+		<form  action="userform_bm.php" name="myForm" method="Post">
 			<table style="width:60%">
 				<tr>
 					<td>Nama: </td>
-					<td><input type="text" name="name" size="30" autofocus></td>
+					<td><input type="text" name="nama" size="30" autofocus></td>
 				</tr>
 				<tr>
 					<td>Umur: </td>
-					<td><input type="number" name="age" min="15" max="60"></td>
+					<td><input type="number" name="umur" min="15" max="60"></td>
 				</tr>
 				<tr>
 					<td>Pengalaman Bekerja: </td>
-					<td><input type="radio" name="job" value="Ada" onclick="show('area');">Ada <br><textarea row="5" column="30" name="area" placeholder="Nama Pekerjaan" id="area" style="display:none;"></textarea></td>
+					<td><input type="radio" name="kerja" value="Ada" onclick="show('area');">Ada <br><textarea row="5" column="30" name="area" placeholder="Nama Pekerjaan" id="area" style="display:none;"></textarea></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="radio" name="job" value="Tiada" onclick="hide();">Tiada </td>
+					<td><input type="radio" name="kerja" value="Tiada" onclick="hide();">Tiada </td>
 				</tr>
 				<tr>
 					<td>Lampirkan Resume: </td>
-					<td><input type="file" name="file"></td>
+					<td><input type="file" name="fail"></td>
 				</tr>
 				<tr>
 					<td>Nombor Telefon: </td>
-					<td><input type="tel" name="contact" size="10" required pattern="(\+?\d[- .]*){10,11}$" required> (Format: 0123456789 / 01123456789) </td>
+					<td><input type="tel" name="nombor" size="10" required pattern="(\+?\d[- .]*){10,11}$" required> (Format: 0123456789 / 01123456789) </td>
 				</tr>
 				<tr>
 					<td>Emel: </span></td>
-					<td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> (Cth: shahnaz@gmail.com)</td>
+					<td><input type="email" name="emel" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> (Cth: shahnaz@gmail.com)</td>
 				</tr>
 			</table>
 			<br>
