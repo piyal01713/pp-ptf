@@ -1,3 +1,23 @@
+<?php
+//if(!isset($_SESSION["username"])){header("Location: login.php");}
+include 'dbcon.php';
+session_start();
+
+    if(!isset($_SESSION['user'])){
+        header('Location: userlogin.php');
+    }
+
+	$sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
+			if($result=mysqli_query($conn, $sql)){
+				$postinfo=mysqli_fetch_array($result);
+			}else{
+				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+			}
+
+if(isset($_POST['editBtn'])){
+	header('Location: userpage.php');
+}
+?>
 <html>
 	<head><title>Job Finder</title>
 		<style>
@@ -30,6 +50,15 @@
 
 		?>
 		</table>
+		<?php
+            $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
+			if($result=mysqli_query($conn, $sql)){
+				$postinfo=mysqli_fetch_array($result);
+				 echo"<td colspan='2'><a class='editlink' href=\" userpage.php?post_id=".$postinfo['post_id']." \">EDIT</a></td></td>";
+			}else{
+				echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+			}
+        ?>
 		<a href="userpage.html"><button type="button" value="Update Profile">Update Profile</a>
 		<a href="index1.php"><button type="button" value="Home">Home</a>
 	</body>

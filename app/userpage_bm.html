@@ -1,3 +1,50 @@
+<?php
+//if(!isset($_SESSION["username"])){header("Location: login.php");}
+include 'dbcon.php';
+session_start();
+
+$sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
+    
+    $results1 = mysqli_query($conn, $sql1);
+
+    if(mysqli_num_rows($results1) > 0){
+    while($userinfo = mysqli_fetch_array($results1)){
+        $type = $userinfo['type'];
+        }
+    }
+
+if(!isset($_SESSION['user']) OR ($type == "employee")){
+    header('Location: index.php');
+}
+
+if(!isset($_POST['submitBtn'])){
+	$sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
+		if($result=mysqli_query($conn, $sql)){
+			$postinfo=mysqli_fetch_array($result);
+            if($_GET['post_id'] == 0){
+                header('Location: index.php');
+            }
+		}else{
+			echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+		}
+}
+
+if(isset($_POST['submitBtn'])){
+	
+$_POST['nama']=mysqli_real_escape_string($conn, $_POST['nama']);
+$_POST['emel']=mysqli_real_escape_string($conn, $_POST['emel']);
+$_POST['pswd']=mysqli_real_escape_string($conn, $_POST['pswd']);
+
+	$update="UPDATE posts SET `nama`='$_POST[nama]',
+		`emel`='$_POST[emel]',
+		`pswd`='$_POST[pswd]',";
+	     if(mysqli_query($conn, $update)){
+		    header('Location: index1.php');	
+	     }else{
+	     	echo "Error: ". "<br>" . $update . "<br>" . mysqli_error($conn);
+	     }
+}
+?>
 <html>
 	<head><title>Job Finder</title>
 		<style>
@@ -11,20 +58,23 @@
 	</head>
 	<body>
 		<h2>Profile Pengguna</h2>
-		<form  action="userprofile.php" method="Post">
+		<form  action="userprofile_bm.php" method="Post">
 			<table style="width:40%">
 				<tr>
+					<!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
+	        		<input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
 					<td>Name Pengguna: </td>
-					<td><input type="text" name="name" size="30" autofocus></td>
+					<td><input type="text" name="nama" size="30" autofocus value="<?php echo $postinfo['nama']; ?>"></td>
 				</tr>
 				<tr>
 					<td>Emel: </td>
-					<td><input type="email" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required></td>
+					<td><input type="email" name="emel" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required value="<?php echo $postinfo['emel']; ?>"></td>
 				</tr>
 				<tr>
 					<td>Kata Laluan: </td>
-					<td><input type="password" required name="pwd" minlength="6" size="10" required></td>
+					<td><input type="password" required name="pswd" minlength="6" size="10" required value="<?php echo $postinfo['pswd']; ?>"></td>
 				</tr>
+
 			</table>
 			<input type="reset" value="Tetap Semula">
 			<input type="submit" value="Simpan">

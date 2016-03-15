@@ -17,31 +17,31 @@ th, td {
 
 			echo"<tr>";
 			echo "<td>Nama: </td>";
-			echo ucfirst("<td>$name</td>");
+			echo strtoupper("<td>$name</td>");
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Umur: </td>";
+			echo "<td>Age: </td>";
 			echo "<td>$age</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Pengalaman Bekerja: </td>";
+			echo "<td>Work Experience: </td>";
 			echo "<td>$job / $area</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Lampirkan Resume: </td>";
+			echo "<td>Attach Resume: </td>";
 			echo "<td>$file</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Nombor Telefon: </td>";
+			echo "<td>Contact Number: </td>";
 			echo "<td>$contact</td>";
 			echo"</tr>";
 			echo"<tr>";
-			echo "<td>Emel: </td>";
+			echo "<td>E-mail: </td>";
 			echo "<td>$email</td>";
 			echo"</tr>";
 		?>
 		</table>
 		<br>
-		<button type="button" onclick="alert('Berjaya!')"><a href="index.php">OK</a></button>
+		<button type="button" onclick="alert('Succeed!')"><a href="index.php">OK</a></button>
 	</body>
 </html>
