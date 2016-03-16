@@ -17,27 +17,27 @@ th, td {
 
 			echo"<tr>";
 			echo "<td>Nama: </td>";
-			echo strtoupper("<td>$name</td>");
+			echo strtoupper("<td>$nama</td>");
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Umur: </td>";
-			echo "<td>$age</td>";
+			echo "<td>$umur</td>";
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Pengalaman Bekerja: </td>";
-			echo "<td>$job / $area</td>";
+			echo "<td>$kerja / $area</td>";
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Lampirkan Resume: </td>";
-			echo "<td>$file</td>";
+			echo "<td>$fail</td>";
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Nombor Telefon: </td>";
-			echo "<td>$contact</td>";
+			echo "<td>$nombor</td>";
 			echo"</tr>";
 			echo"<tr>";
 			echo "<td>Emel: </td>";
-			echo "<td>$email</td>";
+			echo "<td>$emel</td>";
 			echo"</tr>";
 		?>
 		</table>

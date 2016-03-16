@@ -18,7 +18,7 @@ $results = mysqli_query($conn, $sql);
 if(isset($_POST['submitbtn'])){
 	$to = 'farid@pocketpixel.com';
 	$subject = "Application for part time job";
-	$body = "Name: '$_POST[aname]', Age: '$_POST[age]', Have Work Experience: '$_POST[job]', Contact: '$_POST[contact]', Email: '$_POST[email]' ";
+	$body = "Name: '$_POST[aname]', Age: '$_POST[age]', Have Work Experience: '$_POST[experience]', Attach Resume: '$_POST[file]', Contact: '$_POST[contact]', Email: '$_POST[email]' ";
 	$headers = 'From: farid@pocketpixel.com';
 
 	if(mail($to, $subject, $body, $headers)){
@@ -55,6 +55,10 @@ if(isset($_POST['submitbtn'])){
             echo "<tr>";
             echo "<td class=''>Have Work Experience:</td>";
             echo "<td class=''>".$_POST['experience']."</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td class=''>Attach Resume:</td>";
+            echo "<td class=''>".$_POST['file']."</td>";
             echo "</tr>";
             echo "<tr>";
             echo "<td class=''>Contact Number:</td>";
