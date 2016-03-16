@@ -15,11 +15,11 @@
 </head>
 	<body>
 		<h2>Apply Form</h2>
-		<form  action="userform.php" name="myForm" method="Post">
+		<form  action="formpreview.php" name="myForm" method="Post">
 			<table style="width:60%">
 				<tr>
 					<td>Name: </td>
-					<td><input type="text" name="name" size="30" autofocus></td>
+					<td><input type="text" name="aname" size="30" autofocus></td>
 				</tr>
 				<tr>
 					<td>Age: </td>
@@ -27,11 +27,11 @@
 				</tr>
 				<tr>
 					<td>Work Experience: </td>
-					<td><input type="radio" name="job" value="Ada" onclick="show('area');">Yes <br><textarea row="5" column="30" name="area" placeholder="Nama Pekerjaan" id="area" style="display:none;" ></textarea></td>
+					<td><input type="radio" name="experience" value="Ada" onclick="show('area');">Yes <br><textarea row="5" column="30" name="area" placeholder="Name of Work" id="area" style="display:none;" ></textarea></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="radio" name="job" value="Tiada" onclick="hide('area');">No </td>
+					<td><input type="radio" name="experience" value="Tiada" onclick="hide('area');">No </td>
 				</tr>
 				<tr>
 					<td>Attach Resume: </td>
