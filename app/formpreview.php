@@ -18,7 +18,7 @@ $results = mysqli_query($conn, $sql);
 if(isset($_POST['submitbtn'])){
 	$to = 'farid@pocketpixel.com';
 	$subject = "Application for part time job";
-	$body = "Name: '$_POST[aname]', Age: '$_POST[age]', Have Work Experience: '$_POST[experience]', Contact: '$_POST[contact]', Email: '$_POST[email]' ";
+	$body = "Name: '$_POST[aname]', Age: '$_POST[age]', Have Work Experience: '$_POST[job]', Contact: '$_POST[contact]', Email: '$_POST[email]' ";
 	$headers = 'From: farid@pocketpixel.com';
 
 	if(mail($to, $subject, $body, $headers)){
