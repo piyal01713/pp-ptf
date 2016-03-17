@@ -1,44 +1,24 @@
 <?php
+$name = $_POST['aname'];
+$age = $_POST['age'];
+$experience = $_POST['experience'];
+$area = $_POST['area'];
+$file = $_POST['file'];
+$contact = $_POST['contact'];
+$email = $_POST['email'];
+
 include 'dbcon.php';
 session_start();
 
 $sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
-    
-    $results1 = mysqli_query($conn, $sql1);
+$results1 = mysqli_query($conn, $sql1);
 
-    if(mysqli_num_rows($results1) > 0){
+if(mysqli_num_rows($results1) > 0){
     while($userinfo1 = mysqli_fetch_array($results1)){
         $type = $userinfo1['type'];
         }
-    }
-
-$sql = "SELECT email FROM user WHERE username = '$_SESSION[user]' ";
-$results = mysqli_query($conn, $sql);
-
-if(isset($_POST['submitbtn'])){
-	$to = 'farid_yid13@yahoo.com';
-
-	$subject = "Application for part time job";
-
-	$body = "Name: '$_POST[aname]', 
-	 Age: '$_POST[age]', 
-	 Have Work Experience: '$_POST[experience]', 
-	 Attach Resume: '$_POST[file]', 
-	 Contact: '$_POST[contact]',  
-	 Email: '$_POST[email]' ";
-
-	$headers = 'From: farid@pocketpixel.com';
-
-	if(mail($to, $subject, $body, $headers)){
-		echo'Successfully sent!';
-
-	}else{
-		echo 'Error';
-	}
-
-}else{
-	echo "not sent";
 }
+
 ?>
 <html>
 <head>
@@ -46,46 +26,36 @@ if(isset($_POST['submitbtn'])){
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 	<body>
-	<form name="form" action="formpreview.php" method="post">
-		<h1>Form Preview</h1>
-		<table style="width:30%">
-			<tbody>
-		<?php
-
-			echo "<tr>";
-			echo "<td class=''>Name:</td>";
-            echo "<td class=''>".$_POST['aname']."</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class=''>Age:</td>";
-            echo "<td class=''>".$_POST['age']."</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class=''>Have Work Experience:</td>";
-            echo "<td class=''>".$_POST['experience']."</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class=''>Previous Job:</td>";
-            echo "<td class=''>".$_POST['area']."</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class=''>Attach Resume:</td>";
-            echo "<td class=''>".$_POST['file']."</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class=''>Contact Number:</td>";
-            echo "<td class=''>".$_POST['contact']."</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class=''>Email:</td>";
-            echo "<td class=''>".$_POST['email']."</td>";
-            echo "</tr>";
-		?>
-			</tbody>
-		</table>
-		<br>
-		<a class="cancelbtn" href="index.php">CANCEL</a>
-		<button type="submit" name='submitbtn' >OK</button>
-		</form>
+	<form  action="send.php" name="myForm" method="Post">
+            <table style="width:60%">
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="aname" size="30" value="<?php echo $_POST['aname']; ?>" readonly></td>
+                </tr>
+                <tr>
+                    <td>Age: </td>
+                    <td><input type="number" name="age" min="15" max="60" value="<?php echo $_POST['age']; ?>" readonly></td>
+                </tr>
+                <tr>
+                    <td>Work Experience: </td>
+                    <td><input type="text" name="experience" value="<?php echo $_POST['experience']; ?>" readonly><br></td>
+                </tr>
+                <tr>
+                    <td>Attach Resume: </td>
+                    <td><input type="file" name="file" value="<?php $_GET['file']; ?>" ></td>
+                </tr>
+                <tr>
+                    <td>Phone Number: </td>
+                    <td><input type="tel" name="contact" size="10" required pattern="(\+?\d[- .]*){10,11}$" value="<?php echo $_POST['contact']; ?>" readonly></td>
+                </tr>
+                <tr>
+                    <td>E-mail: </span></td>
+                    <td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" value="<?php echo $_POST['email']; ?>" readonly></td>
+                </tr>
+            </table>
+            <br>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </form>
 	</body>
 </html>
