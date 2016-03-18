@@ -1,22 +1,25 @@
+<?php
+include'getform.php';
+?>
+
+<script type="text/javascript">
+function show() { document.getElementById('area').style.display = 'block'; }
+function hide() { document.getElementById('area').style.display = 'none'; }
+</script>
+
 <html>
-<head><title>Job Finder</title>
-	<style>
-	table, th, td {
-	    border: 1px solid white;
-	}
-	th, td {
-	    padding: 5px;
-	}
-	</style>
-	<script type="text/javascript">
-	        function show() { document.getElementById('area').style.display = 'block'; }
-	        function hide() { document.getElementById('area').style.display = 'none'; }
-	</script>
+<head>
+<title>Job Finder</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 	<body>
 		<h2>Apply Form</h2>
 		<form  action="send.php" name="myForm" method="Post">
-			<table style="width:60%">
+			<table name="formtable" style="width:60%">
+				<tr>
+					<td>To: </td>
+					<td><input type="text" name="tosend" size="30" value="<?php echo $userinfo['email'] ?>" readonly></td>
+				</tr>
 				<tr>
 					<td>Name: </td>
 					<td><input type="text" name="aname" size="30" autofocus></td>
@@ -27,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>Work Experience: </td>
-					<td><input type="radio" name="experience" value="yes" onclick="show('area');">Yes <br><textarea row="5" column="30" name="area" placeholder="Previous Job" id="area" style="display:none;" ></textarea></td>
+					<td><input type="radio" name="experience" value="yes" onclick="show('area');">Yes <br><textarea value="None" row="5" column="30" name="area" placeholder="Experience About Previous Job" id="area" style="display:none;"></textarea></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -47,8 +50,9 @@
 				</tr>
 			</table>
 			<br>
-			<input type="reset" value="Reset">
-			<input type="submit" value="Submit">
+			<a class="cancelbtn" href="index.php">CANCEL</a>
+			<input type="reset" value="RESET">
+			<input type="submit" value="SUBMIT">
 		</form>
 	</body>
 </html>

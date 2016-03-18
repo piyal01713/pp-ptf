@@ -115,5 +115,12 @@ nav{
 	margin: auto;
 }
 
+.formtable > table, th, td {
+	    border: 1px solid white;
+}
+.formtable > th, td {
+	    padding: 5px;
+}
+
 
 </style>

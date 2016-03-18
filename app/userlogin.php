@@ -61,6 +61,7 @@ if(isset($_SESSION['user'])){
 				</fieldset>
 				<p><i>or</i></p>
 				<p><b><i>New user? Sign up <a href="prereg.php">here. </a></b></p>
+				<p><b><i><a href="index.php">Back to home page</a></b></p>
 			</div>
 		<form>
 	</body>
