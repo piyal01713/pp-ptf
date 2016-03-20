@@ -2,41 +2,54 @@
 include 'dbcon.php';
     session_start();
 
-    if(isset($_SESSION['user'])){
+    if($conn){
 
-        $sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
-        $results1 = mysqli_query($conn, $sql1);
+        if(isset($_SESSION['user'])){
 
-        if(mysqli_num_rows($results1) > 0){
+            $sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
+            $results1 = mysqli_query($conn, $sql1);
 
-            while($userinfo1 = mysqli_fetch_array($results1)){
+            if(mysqli_num_rows($results1) > 0){
 
-                $type = $userinfo1['type'];
+                while($userinfo1 = mysqli_fetch_array($results1)){
 
-                if($type == "employer"){
+                    $type = $userinfo1['type'];
 
-                    $myads = "|<a class='mainlink' href='index1.php'> MY ADS </a>|";
+                    if($type == "employer"){
 
-                    $create = "<a class='mainlink' href='create-post.php'> CREATE NEW POST </a>|";
+                        $myads = "|<a class='mainlink' href='index1.php'> MY ADS </a>|";
 
-                }else{
+                        $create = "<a class='mainlink' href='create-post.php'> CREATE NEW POST </a>|";
 
-                    $myads = "|<a class='mainlink' href='#'> STATUS </a>|";
+                    }else{
 
-                    $create = "";
+                        $myads = "|<a class='mainlink' href='#'> STATUS </a>|";
+
+                        $create = "";
+                    }
                 }
             }
+
+            $userlink = "<a class='username' href='#'>".$_SESSION['user']." </a>".$myads.$create."<a class='loglink' href='logout.php'> LOGOUT </a>";
+        }else{
+
+            $userlink = "<a class='loglink' href='userlogin.php'> LOGIN </a>";
         }
 
-        $userlink = "<a class='username' href='#'>".$_SESSION['user']." </a>".$myads.$create."<a class='loglink' href='logout.php'> LOGOUT </a>";
-    }else{
+        $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
 
-        $userlink = "<a class='loglink' href='userlogin.php'> LOGIN </a>";
+        if(isset($_POST['submit'])){
+
+            $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
+
+            $results= mysqli_query($conn, $sql);
+
+        }else{
+
+            $sql = "SELECT * FROM posts";
+
+            $results= mysqli_query($conn, $sql);
+
+        }
     }
-
-    $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
-
-    $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
-
-    $results= mysqli_query($conn, $sql);
 ?>

@@ -14,10 +14,10 @@ session_start();
         $userinfo1 = mysqli_fetch_array($result1);
         $userinfo1['email'];
 
-        $sql2 = "SELECT email FROM user WHERE user_id= '$_SESSION[user]' ";
-        $result2 = mysqli_query($conn, $sql1);
-        $userinfo2 = mysqli_fetch_array($result1);
-        echo $userinfo2['email'];
+        $sql2 = "SELECT email FROM user WHERE username= '$_SESSION[user]' ";
+        $result2 = mysqli_query($conn, $sql2);
+        $userinfo2 = mysqli_fetch_array($result2);
+        $userinfo2['email'];
 
     }else{
 
