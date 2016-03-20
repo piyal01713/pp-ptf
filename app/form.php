@@ -18,7 +18,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 			<table name="formtable" style="width:60%">
 				<tr>
 					<td>To: </td>
-					<td><input type="text" name="tosend" size="30" value="<?php echo $userinfo['email'] ?>" readonly></td>
+					<td><input type="text" name="tosend" size="30" value="<?php echo $userinfo1['email']; ?>" readonly></td>
 				</tr>
 				<tr>
 					<td>Name: </td>
@@ -46,7 +46,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 				</tr>
 				<tr>
 					<td>E-mail: </span></td>
-					<td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> (Ex: shahnaz@gmail.com)</td>
+					<td><input type="email" name="email" value="<?php echo $userinfo2['email']; ?>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> (Ex: shahnaz@gmail.com)</td>
 				</tr>
 			</table>
 			<br>

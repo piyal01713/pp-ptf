@@ -15,9 +15,7 @@ $to = $_POST['tosend'];
 	$headers = 'From: farid@pocketpixel.com';
 
 	if(mail($to, $subject, $body, $headers)){
-		echo'Successfully sent!';
-		echo '<br>';
-		echo'<a href="index.php">BACK TO HOME PAGE</a>';
+		header("Location: sent.php");
 
 	}else{
 		echo 'Error';

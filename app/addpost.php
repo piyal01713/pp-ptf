@@ -34,8 +34,7 @@ VALUES('$_POST[work]',
 	'$_POST[userid]')";
 
 if(mysqli_query($conn, $sql)){
-	echo "Your post has been saved!<br>";
-	echo "<a href='index1.php'>Back to Job Feed</a>";
+	header("Location: addmsg.php");
 }
 else{
 	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
