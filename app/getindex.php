@@ -38,18 +38,8 @@ include 'dbcon.php';
 
         $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
 
-        if(isset($_POST['submit'])){
-
             $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
 
             $results= mysqli_query($conn, $sql);
-
-        }else{
-
-            $sql = "SELECT * FROM posts";
-
-            $results= mysqli_query($conn, $sql);
-
-        }
     }
 ?>
