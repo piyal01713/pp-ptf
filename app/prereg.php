@@ -49,6 +49,8 @@ $regdate = date("Y.m.d");
 					<input name="submitreg" type="submit" value="Submit">
 				</form>
 			</fieldset>
+			<p><b><i><a href="userlogin.php">Login page</a></b></p>
+			<p><b><i><a href="index.php">Back to Home page </a></b></p>
 		</div>
 	</body>
 </html>
