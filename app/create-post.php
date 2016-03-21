@@ -31,7 +31,11 @@ $sql="SELECT user_id FROM user WHERE username = '$_SESSION[user]' ";
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date("Y.m.d");
 ?>
+<<<<<<< HEAD
+<h1>Add Post</h1>
+=======
 <h1>Create Post</h1>
+>>>>>>> upstream/master
     <table border="0">
         <tbody>
             <tr>
@@ -44,7 +48,11 @@ $date = date("Y.m.d");
             </tr>
             <tr>
                 <td>Salary:<br><br></td>
+<<<<<<< HEAD
+                <td>RM <input name="salary" type="number" required> (one hour)<br><br></td>
+=======
                 <td>RM <input name="salary" type="number" required> (Per Hour)<br><br></td>
+>>>>>>> upstream/master
             </tr>
             <tr>
                 <td>Address:<br><br></td>

@@ -22,7 +22,7 @@ include 'dbcon.php';
 	<body>
 		<form action="login.php" method="Post">
 			<center><br>
-				<h2>Looking forJob or Worker?</h2>
+				<h2>Looking for Job or Worker?</h2>
 				<fieldset style="width:250">
 					<legend>Login: </legend>
 					<table>
@@ -41,7 +41,7 @@ include 'dbcon.php';
 					<input type="reset" value="Reset">
 				</fieldset>
 				<p><i>or</i></p>
-				<p><b><i>New user? Register <a href="prereg.php">here. </a></b></p>
+				<p><b><i>New user? Sign in <a href="prereg.php">here. </a></b></p>
 			</center>
 		<form>
 	</body>
