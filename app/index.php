@@ -11,7 +11,7 @@ include'getindex.php';
         <div class="tophead">
             <header>
                 <div>
-                    <h1> NOT PART TIME FINDER </h1>
+                    <h1>PART TIME FINDER </h1>
                 </div>
             </header>
 
