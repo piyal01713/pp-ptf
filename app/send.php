@@ -1,5 +1,6 @@
-<?php
-$to = $_POST['tosend'];
+<?php 
+
+	$to = $_POST['tosend'];
 
 	$subject = 'Application for part time job';
 
@@ -8,9 +9,9 @@ $to = $_POST['tosend'];
 	'Age: ' .$_POST['age']."\n\n".
 	'Have Work Experience: '.$_POST['experience']."\n\n".
 	'Experience About Previous Jobs:'.$_POST['area']."\n\n".
-	'Attach Resume: '.$_POST['file']."\n\n".
 	'Contact: '.$_POST['contact']."\n\n".
-	'Email: '.$_POST['email'];
+	'Email: '.$_POST['email']."\n\n".
+	'Attach Resume:';
 
 	$headers = 'From: farid@pocketpixel.com';
 
@@ -18,7 +19,7 @@ $to = $_POST['tosend'];
 		header("Location: sent.php");
 
 	}else{
-		echo 'Error';
+		echo 'Error!';
 	}
 ?>
 <html>
@@ -27,3 +28,4 @@ $to = $_POST['tosend'];
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 </html>
+
