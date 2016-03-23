@@ -21,6 +21,6 @@ session_start();
 
     }else{
 
-        echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+        echo "Error! There is something wrong"; //. "<br>" . $sql . "<br>" . mysqli_error($conn);
     }
 ?>

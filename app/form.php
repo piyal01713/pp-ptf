@@ -14,7 +14,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 </head>
 	<body>
 		<h2>Apply Form</h2>
-		<form  action="send.php" name="myForm" method="Post">
+		<form  action="send.php" name="myForm" method="Post" enctype="multipart/form-data">
 			<table name="formtable" style="width:60%">
 				<tr>
 					<td>To: </td>
