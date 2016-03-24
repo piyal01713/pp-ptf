@@ -1,8 +1,84 @@
 <style type="text/css">
 
+<<<<<<< HEAD
 .job-title
 {
    
+=======
+html{
+	margin: auto;
+	padding: 0;
+}
+
+header{
+	margin: auto;
+	padding: 0px 5px;
+
+}
+
+body{
+	margin: auto;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: blue;
+}
+
+.button{
+	cursor:pointer;
+}
+
+.cancelbtn{
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    text-decoration: none; font: menu; color: ButtonText;
+    display: inline-block; padding: 2px 8px;
+    font-size: 11px;
+}
+
+.err{
+	text-align: center;
+	color: red;
+}
+
+.postlink{
+	text-decoration:none;
+	color: black;
+}
+
+.middlefield{
+	margin: auto;
+	padding: 0 15%;
+	text-align: center;
+	
+}
+
+.username{
+	color: #d9d9d9;
+}
+.mainlink{
+	color: #d9d9d9;
+}
+.loglink{
+	color: #d9d9d9;
+}
+.userlink{
+	float: right;
+	padding: 0 50px 0 0;
+}
+.fieldtable{
+	max-width: 80%;
+}
+
+.regfieldbox{
+
+	text-align:center;
+	width: 50%;
+	margin: auto;
+>>>>>>> Pocketeers/master
 }
 
 .formtable > table, th, td {
