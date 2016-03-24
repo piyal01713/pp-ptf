@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 include'getindex.php';
 ?>
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
     	<Title>PTF</Title>
@@ -33,13 +32,16 @@ include'getindex.php';
       <a class="navbar-brand" href="#">Part Time Finder</a>
       <ul class="nav navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="<?php echo $myadshref; ?>"><?php echo $myads ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="<?php echo $createhref ?>"><?php echo $create ?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo $loginhref ?>"><?php echo $login ?></a>
         </li>
       </ul>
     </nav>
