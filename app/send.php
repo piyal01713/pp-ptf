@@ -24,7 +24,7 @@
 ?>
 <html>
 <head>
-    <Title>Success!</Title>
+    <Title>Send</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 </html>
