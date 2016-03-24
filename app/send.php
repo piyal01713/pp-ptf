@@ -24,11 +24,11 @@ if(isset($_FILES) && (bool) $_FILES) {
 	$to = $_POST['tosend'];
 	$from = "farid@pocketpixel.com"; 
 	$subject ="test attachment"; 
-	$message = 'You have a job application request from:'."\n\n\n".
+	$message = '* You have a job application request from:'."\n\n".
 	'Name: '.$_POST['aname']."\n\n".
 	'Age: ' .$_POST['age']."\n\n".
 	'Have Work Experience: '.$_POST['experience']."\n\n".
-	'Experience About Previous Jobs:'.$_POST['area']."\n\n".
+	'Experience About Previous Jobs: '."\n".$_POST['area']."\n\n".
 	'Contact: '.$_POST['contact']."\n\n".
 	'Email: '.$_POST['email']."\n\n".
 	'(Attachments is provided within the email)';

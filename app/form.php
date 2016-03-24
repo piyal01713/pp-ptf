@@ -30,7 +30,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 				</tr>
 				<tr>
 					<td>Work Experience: </td>
-					<td><input type="radio" name="experience" value="yes" onclick="show('area');">Yes <br><textarea value="None" row="5" column="30" name="area" placeholder="Experience About Previous Job" id="area" style="display:none;"></textarea></td>
+					<td><input type="radio" name="experience" value="yes" onclick="show('area');">Yes <br><textarea row="5" column="30" name="area" placeholder="Experience About Previous Job" id="area" style="display:none;">None</textarea></td>
 				</tr>
 				<tr>
 					<td></td>
