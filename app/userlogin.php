@@ -9,7 +9,7 @@ include'getuserlogin.php';
 	<body>
 		<form action="userlogin.php" method="Post">
 			<div class="middlefield">
-				<h2>Job Seekers!</h2>
+				<h2>Opportunity Seekers!</h2>
 				<fieldset class="regfieldbox" style="width:250">
 					<legend>Login: </legend>
 					<table class="fieldtable">
