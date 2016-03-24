@@ -9,7 +9,7 @@ include'getindex.php';
     	<Title>PTF</Title>
      
 	
-	 previous CSS   <link rel="stylesheet" type="text/css" href="main.css"> 
+   <link rel="stylesheet" type="text/css" href="main.css"> 
 		
 		<!-- Bootstrap -->
 		<!-- Required meta tags always come first -->

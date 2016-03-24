@@ -2,6 +2,7 @@
 include 'dbcon.php';
     session_start();
 
+	
     if(isset($_SESSION['user'])){
 
         $sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
@@ -34,9 +35,13 @@ include 'dbcon.php';
         $userlink = "<a class='loglink' href='userlogin.php'> LOGIN </a>";
     }
 
-    $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
+	
+	  $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
+	  
+	  $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
 
-    $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
-
-    $results= mysqli_query($conn, $sql);
+     $results= mysqli_query($conn, $sql);
+	
+	
+    	
 ?>
