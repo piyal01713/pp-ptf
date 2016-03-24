@@ -31,6 +31,7 @@ $sql="SELECT user_id FROM user WHERE username = '$_SESSION[user]' ";
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date("Y.m.d");
 ?>
+
 <h1>Create Post</h1>
     <table border="0">
         <tbody>
@@ -81,10 +82,6 @@ $date = date("Y.m.d");
                 <td>Date Post:<br><br></td>
                 <td><input name="date_posted" type="text" value="<?php echo $date; ?>" readonly><br><br></td>
             </tr>
-            <tr>
-            <td>User ID</td>
-            <td><input name="userid" type="text" value="<?php echo $userid; ?>" readonly><br><br></td>
-            </tr>
         </tbody>
     </table>
     <table ="0">
@@ -92,8 +89,8 @@ $date = date("Y.m.d");
             <td>
                 <a class="cancelbtn" href="index.php">CANCEL</a>
                 <form action="demo_form.asp" method="get">
-                    <input class="button" type="reset" name="resetBtn" value="Reset">
-                    <input class="button" type="submit" name="submitBtn" value="Post">
+                    <input class="button" type="reset" name="resetBtn" value="RESET">
+                    <input class="button" type="submit" name="submitBtn" value="POST">
                 </form>
             </td>
         </tr>

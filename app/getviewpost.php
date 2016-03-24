@@ -22,7 +22,7 @@ session_start();
 
         if((!isset($_SESSION['user'])) OR ($type == "employee")){
 
-         $apply = "<td colspan='2'><a class='editlink' href=\" form.html?post_id=".$postinfo['post_id']." \">APPLY</a></td>";
+         $apply = "<td><a href='index.php'>BACK</a></td><td colspan='2'><a class='editlink' href=\" form.php?post_id=".$postinfo['post_id']." \">APPLY</a></td>";
 
         }else{
 
