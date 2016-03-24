@@ -21,6 +21,6 @@ session_start();
 
     }else{
 
-        echo "Error! There is something wrong"; //. "<br>" . $sql . "<br>" . mysqli_error($conn);
+        echo "Please provide an email for the recipient "; //. "<br>" . $sql . "<br>" . mysqli_error($conn);
     }
 ?>
