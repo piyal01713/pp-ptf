@@ -2,7 +2,9 @@
 include 'dbcon.php';
 session_start();
 
+
     if($conn){
+
 
         if(isset($_SESSION['user'])){
 
@@ -55,6 +57,7 @@ session_start();
             $login = "LOGIN";
         }
 
+
         $_POST['search']=mysqli_real_escape_string($conn, $_POST['search']);
 
         $sql = "SELECT * FROM posts WHERE work LIKE '%".$_POST['search']."%' OR employer LIKE '%".$_POST['search']."%' ORDER BY date_posted DESC";
@@ -94,4 +97,5 @@ session_start();
             
         //}
     }
+
 ?>
