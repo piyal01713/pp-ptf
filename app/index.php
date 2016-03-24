@@ -8,16 +8,22 @@ include'getindex.php';
     <head>
     	<Title>PTF</Title>
      
-	 <!-- previous CSS   <link rel="stylesheet" type="text/css" href="main.css"> -->
+	
+	 previous CSS   <link rel="stylesheet" type="text/css" href="main.css"> 
 		
 		<!-- Bootstrap -->
 		<!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	
+	
 
+	
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+		
     </head>
 
     <body>
@@ -49,16 +55,7 @@ include'getindex.php';
 
 
         <div class="middlebody">
-<!--
-            <p>
-                <div class="searchalign">
-                    <form action="index.php" method="post">
-                        <input type="text" name="search" size="30" placeholder="search any available jobs...">
-                        <input type="submit" name="submit" value="SEARCH">
-                    </form>
-                </div>
-            </p>
-	-->
+
 	
 	<br>
 
@@ -90,26 +87,13 @@ include'getindex.php';
               <h2 style="text-align: center;"> Available Jobs </h2>			
 						
 						<br>
-						<table class="table">	
-									
-									
-						    <thead>
-								<tr>
-								<th>Firstname</th>
-								<th>Lastname</th>
-								<th>Email</th>
-								<th>Something</th>
-								</tr>
-						    </thead>
+												
+                          <ul class='jobs list-inline'> 							
 							
-									
                         <?php
                         if(mysqli_num_rows($results) > 0){
     		                    while($postinfo=mysqli_fetch_array($results)){
 
-								echo "<thead>";
-								
-                                    echo "<tr>";
 
                                     $sql2 = "SELECT username FROM user WHERE user_id = '$postinfo[user_id]' ";
 
@@ -119,27 +103,21 @@ include'getindex.php';
 
                                          while($userinfo2=mysqli_fetch_array($results2)){
 
-                                            echo "<td class='maintd'>".$userinfo2['username']."</td>";
+                                             $userinfo2['username'];
 
                                         }
                                     }
-
-    		                        
-    		                        echo "<td class='hiddenmaintd'>".$postinfo['post_id']."</td>";
-    		                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."</a>"."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary(Per Hour): </b>"."RM".$postinfo['salary']."</td>";
-    		                        echo "<td class='maintd'>".$postinfo['date_posted']."</td>";
-    		                        echo "</tr>";
+									
+    		                        echo "<li>".
+    		                        "<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<span>".$postinfo['employer']."</span>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<span class ='job-title'>".$postinfo['work']."</span>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<span class = 'job-category'>".$postinfo['jobcat']."</span>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . "<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"."</a></li><hr>";
+    		                       
     		                    }
     	                }else{
-    	                    echo "<tr>";
-	                        echo "<td class='maintd'>"."0 results"."</td>";
-	                        echo "<td class='maintd'>"."0 results"."</td>";
-	                        echo "<td class='maintd'>"."0 results"."</td>";
-	                        echo "</tr>";
+    	                    
     	                }
                         ?>
-                    </tbody>
-                </table>
+                    
+                           </ul>
             </p>
         </div>
 		
