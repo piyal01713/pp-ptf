@@ -72,7 +72,7 @@ include'navigation.php';
 		 
            <input type="text" name="search" class="form-control" placeholder="Search for...">
            <span class="input-group-btn">
-           <button name ="submit" class="btn btn-default" type="button">Search</button>
+           <button name ="submit" class="btn btn-default" type="submit">Search</button>
 		   
            </span>
           </div><!-- /input-group -->

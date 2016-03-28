@@ -3,9 +3,7 @@
 include 'dbcon.php';
 session_start();
 
-
     if($conn){
-
 
         if(isset($_SESSION['user'])){
 
@@ -59,6 +57,4 @@ session_start();
         }
 
     }
-
-
 ?>

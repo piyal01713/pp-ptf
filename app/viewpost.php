@@ -113,9 +113,6 @@ include'navigation.php';
         ?>
      
    </div>
-
-
-
 </body>
      
 	<footer>

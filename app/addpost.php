@@ -34,7 +34,7 @@ VALUES('$_POST[work]',
 	'$_POST[userid]')";
 
 if(mysqli_query($conn, $sql)){
-	header("Location: addmsg.php");
+	header("Location: addmsg.html");
 }
 else{
 	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);

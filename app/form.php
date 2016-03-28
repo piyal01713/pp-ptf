@@ -29,6 +29,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 		
 </head>
 	<body>
+<<<<<<< HEAD
 	
 	  <nav class="navbar navbar-static-top navbar-dark bg-inverse">
       <a class="navbar-brand" href="#">Part Time Finder</a>
@@ -87,9 +88,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 			  <label class="col-sm-2">Work Experience:</label>
 			    <div class="col-sm-10">
 				  <div class="radio">
-				    <label>
-					<input type="radio" name="experience" value="yes" onclick="show('area');">Yes <br><textarea row="5" column="30" name="area" placeholder="Experience About Previous Job" id="area" style="display:none;">None</textarea>
-					</label>
+				    <label><input type="radio" name="experience" value="yes" onclick="show('area');" required>Yes <br><textarea row="10" cols="30" name="area" placeholder="(Provide details about previous work) Example: I used to work at..." id="area" style="display:none;"></textarea></label>
 				
 				  </div>
 				  <div class="radio">
@@ -121,9 +120,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 					<input type="email" class="form-control" name="email" value="<?php echo $userinfo2['email']; ?>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> (Ex: shahnaz@gmail.com)
 				  </div>
 			</div>
-		
 			<br>
-			
 			<div class="form-group row">
 			  <div class="col-sm-offset-2 col-sm-10">
 			    <a class="cancelbtn" href="index.php">CANCEL</a>

@@ -21,6 +21,6 @@ include'dbcon.php';
 
     }else{
 
-        echo "Please provide an email for the recipient "; //. "<br>" . $sql . "<br>" . mysqli_error($conn);
+        echo "Error";
     }
 ?>
