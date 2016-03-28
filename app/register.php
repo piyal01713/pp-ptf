@@ -46,10 +46,7 @@ if(($_POST['email'] == "") && ($_POST['username'] == "")){
 				'$_POST[regdate]')";
 
 			if(mysqli_query($conn, $sql)){
-			echo "<center>";
-			echo "<h1>You have sucessfully registered</h1><br>";
-			echo "<a href='userlogin.php'>Please login after register</a>";
-			echo "</center>";
+				header("Location: regmsg.html");
 			}else{
 				//echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 				$emailerror = "This Email Has Already Exist";

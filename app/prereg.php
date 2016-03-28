@@ -5,7 +5,8 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 $regdate = date("Y.m.d");
 ?>
 <html>
-<head><title>Register</title>
+<head>
+<title>Register</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 	<body>
@@ -39,8 +40,7 @@ $regdate = date("Y.m.d");
 							<input type="radio" name="type" value="employee">Employee</td>
 						</tr>
 						<tr>
-							<td>Date: </td>
-							<td><input type="text" name="regdate" value=<?php echo $regdate ?> readonly></td>
+							<td><input type="hidden" name="regdate" value=<?php echo $regdate ?> readonly></td>
 						</tr>
 					</tbody>
 					</table>
