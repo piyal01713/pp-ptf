@@ -21,6 +21,6 @@ session_start();
 
     }else{
 
-        echo "Please provide an email for the recipient ";
+        echo "Error";
     }
 ?>

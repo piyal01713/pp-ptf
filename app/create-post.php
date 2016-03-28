@@ -84,6 +84,7 @@ $date = date("Y.m.d");
             </tr>
         </tbody>
     </table>
+    <input name="userid" type="hidden" value="<?php echo $userid; ?>">
     <table ="0">
         <tr>
             <td>
