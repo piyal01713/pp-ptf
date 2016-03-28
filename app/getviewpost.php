@@ -15,14 +15,15 @@ session_start();
     }
 
     $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
-    
     if($result=mysqli_query($conn, $sql)){
 
         $postinfo=mysqli_fetch_array($result);
 
         if((!isset($_SESSION['user'])) OR ($type == "employee")){
 
-         $apply = "<td><a href='index.php'>BACK</a></td><td colspan='2'><a class='editlink' href=\" form.php?post_id=".$postinfo['post_id']." \">APPLY</a></td>";
+		//&nbsp alert!
+		
+         $apply = "<a class='btn btn-primary' href=\" form.php?post_id=".$postinfo['post_id']." \">APPLY</a>";
 
         }else{
 
