@@ -1,8 +1,11 @@
 <?php
+
 include 'dbcon.php';
 session_start();
 
-if(isset($_SESSION['user'])){
+    if($conn){
+
+        if(isset($_SESSION['user'])){
 
             $sql1 = "SELECT type FROM user WHERE username = '$_SESSION[user]' ";
             $results1 = mysqli_query($conn, $sql1);
@@ -52,4 +55,6 @@ if(isset($_SESSION['user'])){
             $loginhref = "userlogin.php";
             $login = "LOGIN";
         }
+
+    }
 ?>

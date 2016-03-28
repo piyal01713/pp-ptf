@@ -5,25 +5,26 @@ include'navigation.php';
 <!DOCTYPE html>
 <html lang="en">
 <html>
+
     <head>
     	<Title>PTF</Title>
      
-	
-   <link rel="stylesheet" type="text/css" href="main.css"> 
 		
-		<!-- Bootstrap -->
-		<!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<!-- Bootstrap -->
+	<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 	
 	
 	
 
 	
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	
+		<link rel="stylesheet" type="text/css" href="css/theme.css">
+	
     </head>
 
     <body>
@@ -31,10 +32,10 @@ include'navigation.php';
     <!-- Naviation bar -->	
 	<nav class="navbar navbar-static-top navbar-dark bg-inverse">
       <a class="navbar-brand" href="#">Part Time Finder</a>
-      <ul class="nav navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-        </li>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+				<a class="nav-link" href="index.php">HOME <span class="sr-only">(current)</span></a>
+              </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo $myadshref; ?>"><?php echo $myads ?></a>
         </li>
@@ -80,7 +81,7 @@ include'navigation.php';
       </div>
 	 </form>
 	 
-
+    	
 
 <br>
 
@@ -112,7 +113,15 @@ include'navigation.php';
                                     }
 									
     		                        echo "<li>".
-    		                        "<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<span>".$postinfo['employer']."</span>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<span class ='job-title'>".$postinfo['work']."</span>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<span class = 'job-category'>".$postinfo['jobcat']."</span>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . "<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"."</a></li><hr>";
+										"<a class=\"postlink\" href=\"viewpost.php?post_id="
+										.$postinfo['post_id']."\">"
+										."<span class='job-employer'>".$postinfo['employer']."</span>"
+										."<span class ='job-title'>".$postinfo['work']."</span>"
+										."<span class = 'job-category label label-default'>".$postinfo['jobcat']."</span>"
+										."<span class = 'job-salary'>" .$postinfo['salary']. "</span>" 
+										."<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"
+										."</a>
+									</li>";
     		                       
     		                    }
     	                }else{

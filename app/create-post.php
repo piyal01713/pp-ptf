@@ -29,7 +29,7 @@ $sql="SELECT user_id FROM user WHERE username = '$_SESSION[user]' ";
 <form name="create-post" action="addpost.php" method="post">
 <?php
 date_default_timezone_set("Asia/Kuala_Lumpur");
-$date = date("Y.m.d");
+$date = date("F j, Y");
 ?>
 
 <h1>Create Post</h1>
@@ -84,7 +84,7 @@ $date = date("Y.m.d");
             </tr>
         </tbody>
     </table>
-    <input name="userid" type="hidden" value="<?php echo $userid; ?>">
+	<input name="userid" type="hidden" value="<?php echo $userid; ?>">
     <table ="0">
         <tr>
             <td>

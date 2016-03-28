@@ -1,6 +1,6 @@
 <?php
 include'dbcon.php';
-session_start();
+
 
  $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
     

@@ -1,0 +1,23 @@
+/* Jobs list */
+
+ul.jobs li
+{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+	padding: 10px 0;
+}
+
+ul.jobs li span.job-employer,
+ul.jobs li span.job-title,
+ul.jobs li span.job-category,
+ul.jobs li span.job-salary,
+ul.jobs li span.job-publish-date{
+	margin-right: 5px; 
+}
+
+
+ul.jobs li.job-employer{}
+ul.jobs li.job-title{}
+ul.jobs li.job-category{}
+ul.jobs li.job-salary{}
+ul.jobs li.job-publish-date{}
+
