@@ -15,7 +15,6 @@ session_start();
     }
 
     $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
-    
     if($result=mysqli_query($conn, $sql)){
 
         $postinfo=mysqli_fetch_array($result);
