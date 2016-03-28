@@ -1,5 +1,6 @@
 <?php
 include'getindex.php';
+include'navigation.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

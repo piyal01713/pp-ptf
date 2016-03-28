@@ -22,15 +22,15 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 				</tr>
 				<tr>
 					<td>Name: </td>
-					<td><input type="text" name="aname" size="30" autofocus></td>
+					<td><input type="text" name="aname" size="30" required></td>
 				</tr>
 				<tr>
 					<td>Age: </td>
-					<td><input type="number" name="age" min="15" max="60"></td>
+					<td><input type="number" name="age" min="15" max="60" required></td>
 				</tr>
 				<tr>
 					<td>Work Experience: </td>
-					<td><input type="radio" name="experience" value="yes" onclick="show('area');">Yes <br><textarea row="5" column="30" name="area" placeholder="Experience About Previous Job" id="area" style="display:none;">None</textarea></td>
+					<td><input type="radio" name="experience" value="yes" onclick="show('area');" required>Yes <br><textarea row="10" cols="30" name="area" placeholder="(Provide details about previous work) Example: I used to work at..." id="area" style="display:none;"></textarea></td>
 				</tr>
 				<tr>
 					<td></td>

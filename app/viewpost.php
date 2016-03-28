@@ -7,13 +7,10 @@ include'getviewpost.php'
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<form name="create-post" action="updatepost.php" method="post">
 <h1>View Post</h1>
 <table class="viewtable" border="0" width="50%">
     <tbody>
         <tr>
-        <!-- echo $_GET['id'] is for displaying all the selected value with selected id only-->
-	        <input type="hidden" name="post_id" value="<?php echo $_GET['post_id']; ?>"/>
             <td>Job Title:<br><br></td>
             <td><?php echo $postinfo['work']; ?><br><br></td>
         </tr>
@@ -56,6 +53,5 @@ include'getviewpost.php'
         </tr>
     </tbody>
 </table>
-</form>
 </body>
 </html>
