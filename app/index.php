@@ -90,46 +90,35 @@ include'navigation.php';
 			<div class="container">   
               <h2 style="text-align: center;"> Available Jobs </h2>			
 						
-						<br>
-												
-                          <ul class='jobs list-inline'> 							
+						<br>			
+              <ul class='jobs list-inline'> 							
 							
                         <?php
+                        
                         if(mysqli_num_rows($results) > 0){
-    		                    while($postinfo=mysqli_fetch_array($results)){
+                            while($postinfo=mysqli_fetch_array($results)){
+                                
+                             echo "<li>".
+                                  "<a class=\"postlink\" href=\"viewpost.php?post_id="
+                                  .$postinfo['post_id']."\">"
+                                  ."<span class='job-employer'>".$postinfo['employer']."</span>"
+                                  ."<span class ='job-title'>".$postinfo['work']."</span>"
+                                  ."<span class = 'job-category label label-default'>".$postinfo['jobcat']."</span>"
+                                  ."<span class = 'job-salary'>" .$postinfo['salary']. "</span>" 
+                                  ."<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"
+                                  ."</a>
+                                  </li>";
+                            
+                            }
 
+                        }else{
 
-                                    $sql2 = "SELECT username FROM user WHERE user_id = '$postinfo[user_id]' ";
+                            $list = "No Results";
+                        }
 
-                                    $results2 = mysqli_query($conn, $sql2);
-
-                                    if(mysqli_num_rows($results2) > 0){
-
-                                         while($userinfo2=mysqli_fetch_array($results2)){
-
-                                             $userinfo2['username'];
-
-                                        }
-                                    }
-									
-    		                        echo "<li>".
-										"<a class=\"postlink\" href=\"viewpost.php?post_id="
-										.$postinfo['post_id']."\">"
-										."<span class='job-employer'>".$postinfo['employer']."</span>"
-										."<span class ='job-title'>".$postinfo['work']."</span>"
-										."<span class = 'job-category label label-default'>".$postinfo['jobcat']."</span>"
-										."<span class = 'job-salary'>" .$postinfo['salary']. "</span>" 
-										."<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"
-										."</a>
-									</li>";
-    		                       
-    		                    }
-    	                }else{
-    	                    
-    	                }
                         ?>
                     
-                           </ul>
+              </ul>
             </p>
         </div>
 		
