@@ -19,11 +19,11 @@ $regdate = date("Y.m.d");
 					<tbody>
 						<tr>
 							<td class="viewtd">E-mail: </td>
-							<td><input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br><?php echo $emailerror; ?></td>
+							<td><input type="email" name="email" value="<?php echo $email; ?>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br><?php echo $emailerror; ?></td>
 						</tr>
 						<tr>
 							<td>Username: </td>
-							<td><input type="text" name="username" maxlength="12" size="20" required><br><?php echo $usererror; ?></td>
+							<td><input type="text" name="username" maxlength="12" size="20" value="<?php echo $name; ?>" required><br><?php echo $usererror; ?></td>
 						</tr>
 						<tr>
 							<td>Password: </td>
