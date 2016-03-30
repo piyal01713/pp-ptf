@@ -29,7 +29,6 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 		
 </head>
 	<body>
-<<<<<<< HEAD
 	
 	  <nav class="navbar navbar-static-top navbar-dark bg-inverse">
       <a class="navbar-brand" href="#">Part Time Finder</a>
@@ -72,14 +71,14 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 			<div class="form-group row">
 			    <label for="inputname" class="col-sm-2 form-control-label"> Name:</label>
 				  <div class="col-sm-10">
-					<input type="text" class="form-control"name="aname" size="30" autofocus></td>
+					<input type="text" class="form-control"name="aname" size="30" required></td>
 			      </div>
 			</div>
 			
 			<div class="form-group row">
 			    <label for="inputage" class="col-sm-2 form-control-label"> Age:</label>
 		           <div class="col-sm-10">
-					<td><input type="number" class="form-control" name="age" min="15" max="60"></td>
+					<td><input type="number" class="form-control" name="age" min="15" max="60" required></td>
 			       </div>
 			</div>
 				
@@ -102,7 +101,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 			<div class="form-group row">
 			  <label class="col-sm-2">Attach Resume:</label>
 			    <div class="col-sm-10">
-					<input type="file" class="btn btn-secondary" name="file">
+					<input type="file" class="btn btn-secondary" name="file" required>
                 </div>
 			</div>
 	 
