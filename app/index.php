@@ -92,32 +92,29 @@ include'navigation.php';
 						
 						<br>			
               <ul class='jobs list-inline'> 							
-							
-                        <?php
-                        
-                        if(mysqli_num_rows($results) > 0){
-                            while($postinfo=mysqli_fetch_array($results)){
-                                
-                             echo "<li>".
-                                  "<a class=\"postlink\" href=\"viewpost.php?post_id="
-                                  .$postinfo['post_id']."\">"
-                                  ."<span class='job-employer'>".$postinfo['employer']."</span>"
-                                  ."<span class ='job-title'>".$postinfo['work']."</span>"
-                                  ."<span class = 'job-category label label-default'>".$postinfo['jobcat']."</span>"
-                                  ."<span class = 'job-salary'>" .$postinfo['salary']. "</span>" 
-                                  ."<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"
-                                  ."</a>
-                                  </li>";
-                            
-                            }
+                <?php
+            
+                  if(mysqli_num_rows($results) > 0){
+                      while($postinfo=mysqli_fetch_array($results)){
+                          
+                       echo "<li>".
+                            "<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"
+                            ."<span class='job-employer'>".$postinfo['employer']."</span>"
+                            ."<span class ='job-title'>".$postinfo['work']."</span>"
+                            ."<span class = 'job-category label label-default'>".$postinfo['jobcat']."</span>"
+                            ."<span class = 'job-salary'>RM" .$postinfo['salary']. "(Per Hour)</span>" 
+                            ."<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"
+                            ."</a>
+                            </li>";
+                      
+                      }
 
-                        }else{
+                  }else{
 
-                            $list = "No Results";
-                        }
+                      $list = "No Results";
+                  }
 
-                        ?>
-                    
+                ?>
               </ul>
             </p>
         </div>
