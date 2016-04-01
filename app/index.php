@@ -1,4 +1,5 @@
 <?php
+//include external php file
 include'getindex.php';
 include'navigation.php';
 ?>
@@ -94,9 +95,11 @@ include'navigation.php';
               <ul class='jobs list-inline'> 							
                 <?php
             
+		          //check if table record exist
                   if(mysqli_num_rows($results) > 0){
+	                  //loop to fetch all records
                       while($postinfo=mysqli_fetch_array($results)){
-                          
+                       //display the records
                        echo "<li>".
                             "<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"
                             ."<span class='job-employer'>".$postinfo['employer']."</span>"
@@ -110,8 +113,8 @@ include'navigation.php';
                       }
 
                   }else{
-
-                      $list = "No Results";
+					//display message if no record were found
+                    echo "No Results";
                   }
 
                 ?>

@@ -1,23 +1,33 @@
 <?php
+//include external php file
 include 'dbcon.php';
+//start user session
 session_start();
 
+//check if user session exist
 if(!isset($_SESSION['user'])){
-        header('Location: userlogin.php');
+    //redirect to link
+    header('Location: userlogin.php');
 }
 
+//set sql statement to select userid record from "user" table with user session
 $sql="SELECT user_id FROM user WHERE username = '$_SESSION[user]' ";
 
-    $results=mysqli_query($conn, $sql);
+//run sql statement with query
+$results=mysqli_query($conn, $sql);
 
-        if(mysqli_num_rows($results) > 0){
+//check if record exist
+if(mysqli_num_rows($results) > 0){
+    //loop to fetch record
+    while($userinfo=mysqli_fetch_array($results)){
+        //set record as variable
+        $userid =  $userinfo['user_id'];
+    }
 
-            while($userinfo=mysqli_fetch_array($results)){
-                $userid =  $userinfo['user_id'];
-            }
-        }else{
-            echo "Error: some codes are not correctly placed or one of the code spelling is wrong or does not match, please check back your codes";
-        }
+}else{
+    //display error message
+    echo "Error: some codes are not correctly placed or one of the code spelling is wrong or does not match, please check back your codes";
+}
 ?>
 <html>
 <head>

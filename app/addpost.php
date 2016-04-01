@@ -1,7 +1,9 @@
 <?php
+//include external php file
+include 'dbcon.php';
+//start user session
 session_start();
 
-include 'dbcon.php';
 if($conn){
 //declare $_POST['variable'] as variable that can escape inputed values
 $_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
@@ -33,18 +35,21 @@ VALUES('$_POST[work]',
 	'$_POST[date_posted]',
 	'$_POST[userid]')";
 
+//check if query run
 if(mysqli_query($conn, $sql)){
+	//redirect to link
 	header("Location: addmsg.html");
 }
 else{
 	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
 }
+//close sql queries
 mysqli_close($conn);
 }
 ?>
 <html>
 <head>
-    <Title>Succees!</Title>
+    <Title>Add Post</Title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 </html>
