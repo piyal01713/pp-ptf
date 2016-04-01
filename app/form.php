@@ -1,4 +1,5 @@
 <?php
+//include external php file
 include'getform.php';
 include'navigation.php';
 ?>

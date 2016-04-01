@@ -2,11 +2,14 @@
  
  error_reporting(E_ALL);
  ini_set('display_errors', 1);
- 
+
+//check if file exist
 if(isset($_FILES) && (bool) $_FILES) {
-  
+
+	//allow file extensions format
 	$allowedExtensions = array("pdf","doc","docx","gif","jpeg","jpg","png","rtf","txt");
-	
+
+	//set file as array
 	$files = array();
 	foreach($_FILES as $name=>$file) {
 		$file_name = $file['name']; 
