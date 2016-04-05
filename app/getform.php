@@ -6,10 +6,16 @@ include'dbcon.php';
  $sql = "SELECT * FROM posts WHERE post_id= $_GET[post_id]";
     //check if query is running
     if($result=mysqli_query($conn, $sql)){
+
         //set feth record as variable
         $postinfo=mysqli_fetch_array($result);
+        
         //set user_id
         $postinfo['user_id'];
+
+        //set post id
+        $postinfo['post_id'];
+
         
         //set sql statement to select email record with selected user_id
         $sql1 = "SELECT email FROM user WHERE user_id= '$postinfo[user_id]' ";

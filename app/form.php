@@ -118,6 +118,9 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 			    <label for="inputemail" class="col-sm-2 form-control-label">Email</label>
 				  <div class="col-sm-10">
 					<input type="email" class="form-control" name="email" value="<?php echo $userinfo2['email']; ?>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> (Ex: shahnaz@gmail.com)
+
+					<input type="hidden" class="form-control" name="postid" value="<?php echo $postinfo['post_id']; ?>" required>
+					<input type="hidden" class="form-control" name="status" value="PENDING" required>
 				  </div>
 			</div>
 			<br>
