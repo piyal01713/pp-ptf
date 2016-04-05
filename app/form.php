@@ -1,7 +1,7 @@
 <?php
 //include external php file
-include'getform.php';
 include'navigation.php';
+include'getform.php';
 ?>
 
 <!-- for the text box for work experience section -->
@@ -72,7 +72,7 @@ function hide() { document.getElementById('area').style.display = 'none'; }
 			<div class="form-group row">
 			    <label for="inputname" class="col-sm-2 form-control-label"> Name:</label>
 				  <div class="col-sm-10">
-					<input type="text" class="form-control"name="aname" size="30" required></td>
+					<input type="text" class="form-control" name="aname" size="30" required></td>
 			      </div>
 			</div>
 			

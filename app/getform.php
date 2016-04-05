@@ -10,6 +10,7 @@ include'dbcon.php';
         $postinfo=mysqli_fetch_array($result);
         //set user_id
         $postinfo['user_id'];
+        
         //set sql statement to select email record with selected user_id
         $sql1 = "SELECT email FROM user WHERE user_id= '$postinfo[user_id]' ";
         $result1 = mysqli_query($conn, $sql1);

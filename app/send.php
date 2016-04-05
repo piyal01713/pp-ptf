@@ -1,5 +1,39 @@
 <?php
- 
+
+if($conn){
+//declare $_POST['variable'] as variable that can escape inputed values
+$_POST['location']=mysqli_real_escape_string($conn, $_POST['location']);
+$_POST['scope']=mysqli_real_escape_string($conn, $_POST['scope']);
+$_POST['addinfo']=mysqli_real_escape_string($conn, $_POST['addinfo']);
+$_POST['work']=mysqli_real_escape_string($conn, $_POST['work']);
+$_POST['employer']=mysqli_real_escape_string($conn, $_POST['employer']);
+
+//insert data to table "posts"
+$sql="INSERT INTO applicant(
+	aname,
+	age,
+	experience,
+	contact,
+	email,
+	post_id) 
+VALUES('$_POST[aname]',
+	'$_POST[age]',
+	'$_POST[experience]',
+	'$_POST[contact]',
+	'$_POST[email]',
+	'$_POST[postid]')";
+
+	//check if query run
+	if(mysqli_query($conn, $sql)){
+		//redirect to link
+		header("Location: addmsg.html");
+	}
+	else{
+		echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+	}
+
+}
+
  error_reporting(E_ALL);
  ini_set('display_errors', 1);
 
@@ -69,7 +103,9 @@ if(isset($_FILES) && (bool) $_FILES) {
 		echo "<h1>mail could not be sent!</h1>"; 
 	} 
 }	
- 
+
+//close sql queries
+mysqli_close($conn);
 ?>
 <html>
 <head>

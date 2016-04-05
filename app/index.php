@@ -101,7 +101,7 @@ include'navigation.php';
                       while($postinfo=mysqli_fetch_array($results)){
                        //display the records
                        echo "<li>".
-                            "<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\">"
+                            "<a class=\"postlink\" href=\"viewpost.php?post_id=".$postinfo['post_id']."\" target=\"_blank\">"
                             ."<span class='job-employer'>".$postinfo['employer']."</span>"
                             ."<span class ='job-title'>".$postinfo['work']."</span>"
                             ."<span class = 'job-category label label-default'>".$postinfo['jobcat']."</span>"
@@ -113,7 +113,7 @@ include'navigation.php';
                       }
 
                   }else{
-					//display message if no record were found
+          					//display message if no record were found
                     echo "No Results";
                   }
 
