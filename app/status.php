@@ -1,3 +1,6 @@
+<?php
+include'getindex1.php';
+?>
 <html>
 	<head>
 		<style>
@@ -33,18 +36,9 @@
                     <tr>
                         <th class="mainth">No.</th>
                         <th class="mainth">Job Feed</th>
-                        <!-- <th>Companies</th>
-                        <th>Salary</th> -->
-                        <!-- <th>Address</th>
-                        <th>Job Scope</th>
-                        <th>Info</th>
-                        <th>Job Category</th>
-                        <th>Location Category</th> -->
                         <th class="mainth" colspan="2">Option</th>
                     </tr>
                 </thead>
-
-                
         	</table>
         </p>
 	</body>
