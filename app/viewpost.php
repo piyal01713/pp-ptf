@@ -6,7 +6,6 @@ include'navigation.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<html>
 
     <head>
 	
@@ -33,7 +32,7 @@ include'navigation.php';
         <nav class="navbar navbar-static-top navbar-dark bg-inverse">
       <a class="navbar-brand" href="#">Part Time Finder</a>
           <ul class="nav navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
 				<a class="nav-link" href="index.php">HOME <span class="sr-only">(current)</span></a>
               </li>
         <li class="nav-item">

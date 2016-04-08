@@ -1,64 +1,108 @@
 <?php
-include'getindex1.php';
+include'getindex.php';
+include'navigation.php';
 ?>
+
+<!DOCTYPE html>
 <html>
-<head>
+    <head>
+	
 	<Title>Job List</Title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-	<div class="tophead">
-	    <header>
-	        <div>
-	            <h1>MY ADS</h1>
-	        </div>
-	    </header>
+    
+	<!-- Bootstrap -->
+	<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	
+	
 
-	    <nav>
-	        <a class="mainlink" href="index.php"> HOME </a>|
-	        <a class="mainlink" href="#"> ABOUT </a>
-	        <div class="userlink"><a class="username" href="#"> <?php echo $_SESSION['user']; ?> </a>|<a class="mainlink" href="index1.php"> MY ADS </a>|<a class="mainlink" href="create-post.php"> CREATE NEW POST </a>|<a class="loglink" href="logout.php"> LOGOUT </a></div>
-	    </nav>
-    </div>
-
-     <div class="middlebody">
-        <p>
-            <table class="maintable"border="0" width="100%">
-                <thead>
-                    <tr>
-                        <th class="mainth">Job Feeds</th>
-                        <th class="mainth">Date Post</th>
-                        <th class="mainth" colspan="2">Option</th>
-                    </tr>
-                </thead>
-                <tbody align="center">
+	
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	
+		<link rel="stylesheet" type="text/css" href="css/theme.css">
+		
+    </head>
+	
+    <body>
+	
+	<!-- Naviation bar -->	
+	<nav class="navbar navbar-static-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="#">Part Time Finder</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+				<a class="nav-link" href="index.php">HOME <span class="sr-only">(current)</span></a>
+              </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="<?php echo $myadshref; ?>"><?php echo $myads ?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo $createhref ?>"><?php echo $create ?></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo $loginhref ?>"><?php echo $login ?></a>
+        </li>
+      </ul>
+    </nav>	
+	
+    <br>
+	
+    <div class="container">   
+        <h2 style="text-align: center;"> My Ads </h2>
+	
+	<br>			
+              <ul class='jobs list-inline'> 
+   
                     <?php
                    if(mysqli_num_rows($results) > 0){
                     while($postinfo=mysqli_fetch_array($results)){
-                        echo "<tr>";
+                        
+                        echo "<li>".
+						"<a class=\"postlink\" href=\"viewpost1.php?post_id=".$postinfo['post_id']."\">"
+						."<span class='job-employer'>".$postinfo['employer'].
+						"</span>"
+						."<span class='job-title'>".$postinfo['work']."</span>"
+						."<span class = 'job-salary'>RM" .$postinfo['salary'].
+						 "</span>"
+						."<span class = 'job-publish-date'>". $postinfo['date_posted']."</span>"
+						."</a>";
+						
+                        
 
-                        $postinfo['post_id'];
-                        echo "<td class='maintd'>"."<a class=\"postlink\" href=\"viewpost1.php?post_id=".$postinfo['post_id']."\">"."<b>Job Title: </b>".$postinfo['work']."<br>"."<b>Employer: </b>".$postinfo['employer']."<br>"."<b>Salary: </b>"."RM".$postinfo['salary']."</a>"."</td>";
-                        echo "<td class='maintd'>".$postinfo['date_posted']."</td>";
-
-                        // "\" --> escape character
-                        echo "<td class='maintd'><a href=\" updatepost.php?post_id=".$postinfo['post_id']." \">Edit</a></td>";
-                        echo "<td class='maintd'><a href=\" delmessage.php?post_id=".$postinfo['post_id']." \">Delete</a></td>";
-                        echo "</tr>";
+                        //Delete & Edit section; "\" --> escape character 
+						//Inline CSS styling added here!
+						
+						echo "<span class='myadDelete'><a class='btn btn-danger' href=\" delmessage.php?post_id=".$postinfo['post_id']." \">Delete</a></span>";
+						
+                        echo "<span class='myadEdit'><a class='btn btn-secondary' href=\" updatepost.php?post_id=".$postinfo['post_id']." \">Edit</a></span>";
+                        
+                        echo "</li>";
                         //<a href=\"viewpost.php?id=".$postinfo['id']."\">
                     }
                 }else{
-                    echo "<tr>";
-                        echo "<td class='maintd'>"."0 results"."</td>";
-                        echo "<td class='maintd'>"."0 results"."</td>";
-                        echo "<td class='maintd'>"."0 results"."</td>";
-                        echo "<td class='maintd'>"."0 results"."</td>";
-                        echo "</tr>";
+                        echo "0 results" ;
                 }
-                    ?>
-                </tbody>
-            </table>
-	    </p>
-    </div>
-</body>
+                ?>
+			  </ul>
+        </div>
+		
+		<hr>
+		
+	<div class="container">	
+		 <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+		
+		
+    </body>
+	
+		
+	  <footer>
+        <p style="text-align: center;">&copy; Part Time Finder 2015</p>
+      </footer>
+	</div>
+                
+
 </html>

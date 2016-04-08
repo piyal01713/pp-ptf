@@ -21,3 +21,7 @@ ul.jobs li.job-category{}
 ul.jobs li.job-salary{}
 ul.jobs li.job-publish-date{}
 
+
+ul.jobs li span.myadDelete{float: right; margin-right: 10px}
+ul.jobs li span.myadEdit{float: right; margin-right: 30px}
+
