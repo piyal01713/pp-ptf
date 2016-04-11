@@ -1,12 +1,49 @@
 <?php
- 
- error_reporting(E_ALL);
- ini_set('display_errors', 1);
- 
+//include external php file
+include 'dbcon.php';
+//start user session
+session_start();
+
+//declare $_POST['variable'] as variable that can escape inputed values
+$_POST['aname']=mysqli_real_escape_string($conn, $_POST['aname']);
+$_POST['age']=mysqli_real_escape_string($conn, $_POST['age']);
+$_POST['experience']=mysqli_real_escape_string($conn, $_POST['experience']);
+$_POST['email']=mysqli_real_escape_string($conn, $_POST['email']);
+$_POST['area']=mysqli_real_escape_string($conn, $_POST['area']);
+
+//insert data to table "posts"
+$sql="INSERT INTO applicant(
+	aname,
+	age,
+	experience,
+	contact,
+	email,
+	exp_details,
+	post_id,
+	status) 
+VALUES('$_POST[aname]',
+	'$_POST[age]',
+	'$_POST[experience]',
+	'$_POST[contact]',
+	'$_POST[email]',
+	'$_POST[area]',
+	'$_POST[postid]',
+	'$_POST[status]')";
+
+
+//check if query run
+if(mysqli_query($conn, $sql)){
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+//check if file exist
 if(isset($_FILES) && (bool) $_FILES) {
-  
+
+	//allow file extensions format
 	$allowedExtensions = array("pdf","doc","docx","gif","jpeg","jpg","png","rtf","txt");
-	
+
+	//set file as array
 	$files = array();
 	foreach($_FILES as $name=>$file) {
 		$file_name = $file['name']; 
@@ -28,7 +65,7 @@ if(isset($_FILES) && (bool) $_FILES) {
 	'Name: '.$_POST['aname']."\n\n".
 	'Age: ' .$_POST['age']."\n\n".
 	'Have Work Experience: '.$_POST['experience']."\n\n".
-	'Experience About Previous Jobs: '."\n".$_POST['area']."\n\n".
+	'Experience About Previous Jobs: '.$_POST['area']."\n\n".
 	'Contact: '.$_POST['contact']."\n\n".
 	'Email: '.$_POST['email']."\n\n".
 	'(Attachments is provided within the email)';
@@ -60,13 +97,21 @@ if(isset($_FILES) && (bool) $_FILES) {
 	// send
 	 
 	$ok = mail($to, $subject, $message, $headers); 
-	if ($ok) { 
-		header("Location: sent.php"); 
+	if ($ok) {
+
+		header("Location: sent.php");
+
 	} else { 
+
 		echo "<h1>mail could not be sent!</h1>"; 
 	} 
-}	
- 
+}
+
+}else{
+	echo "Error: ". "<br>" . $sql . "<br>" . mysqli_error($conn);
+}
+//close sql queries
+mysqli_close($conn);
 ?>
 <html>
 <head>

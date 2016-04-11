@@ -1,5 +1,5 @@
 <?php
-
+//include external php file
 include'getviewpost.php';
 include'navigation.php';
 

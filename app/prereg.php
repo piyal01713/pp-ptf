@@ -1,7 +1,10 @@
 <?php
+//include external php file
 include'dbcon.php';
 include'register.php';
+//set local timezone
 date_default_timezone_set("Asia/Kuala_Lumpur");
+//set input date function as varianle
 $regdate = date("Y.m.d");
 
 
